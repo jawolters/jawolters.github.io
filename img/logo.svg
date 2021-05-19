@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="100mm"
@@ -128,15 +127,6 @@
        width="142.75449"
        height="95.281143"
        id="rect835" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient958-2-9"
-       id="linearGradient962"
-       gradientUnits="userSpaceOnUse"
-       x1="53.862377"
-       y1="71.674545"
-       x2="53.66119"
-       y2="115.46278" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -145,14 +135,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="119.83871"
-     inkscape:cy="223.87623"
+     inkscape:zoom="1.979899"
+     inkscape:cx="151.35645"
+     inkscape:cy="194.02964"
      inkscape:document-units="mm"
-     inkscape:current-layer="text833"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     showguides="true"
+     showguides="false"
      inkscape:guide-bbox="true"
      inkscape:window-width="2560"
      inkscape:window-height="1411"
@@ -172,7 +162,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -189,11 +179,11 @@
        id="text845"
        style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333333px;white-space:pre;shape-inside:url(#rect847);" />
     <circle
-       style="fill:#323232;stroke-width:0.301091;fill-opacity:1"
+       style="fill:#1e1e1e;fill-opacity:1;stroke-width:0.316938"
        id="path857"
        cx="50"
        cy="50"
-       r="47.5" />
+       r="50" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -201,17 +191,21 @@
      inkscape:label="Layer 2">
     <g
        aria-label="JW"
-       transform="translate(-23.8802,-42.04511)"
+       transform="translate(-26.780678,-42.883634)"
        id="text833"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.9722px;line-height:1.25;font-family:'Major Mono Display';-inkscape-font-specification:'Major Mono Display';letter-spacing:-3.72798px;white-space:pre;shape-inside:url(#rect835);fill:#ffffff;fill-opacity:1;stroke:none">
       <path
-         d="M 57.782524,81.280101 H 46.027973 V 70.724994 h 22.669491 v 24.768518 q 0,5.577418 -2.218971,9.655528 -2.218972,4.01813 -6.117165,6.11716 -3.83822,2.09903 -8.576024,2.09903 -4.557887,0 -8.45608,-2.27895 -3.838221,-2.27894 -6.117164,-6.11716 -2.278944,-3.89819 -2.278944,-8.456081 h 10.91494 q 0,2.758721 1.559277,4.617861 1.61925,1.85914 4.317999,1.85914 2.878665,0 4.437942,-1.79917 1.61925,-1.859137 1.61925,-5.397497 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.9722px;line-height:1.25;font-family:'Major Mono Display';-inkscape-font-specification:'Major Mono Display';letter-spacing:-3.72798px;white-space:pre;shape-inside:url(#rect835);fill:url(#linearGradient962);fill-opacity:1;stroke:none;fill-rule:nonzero"
+         d="M 57.566637,80.808614 H 44.201124 V 68.969041 h 25.776347 v 27.782633 q 0,6.256146 -2.523081,10.830516 -2.523083,4.50711 -6.955523,6.86157 -4.364248,2.35447 -9.751369,2.35447 -5.182546,0 -9.614986,-2.55627 -4.36425,-2.55628 -6.955523,-6.86157 -2.591273,-4.37257 -2.591273,-9.485121 h 12.410833 q 0,3.094431 1.772977,5.179821 1.841168,2.08538 4.909781,2.08538 3.273186,0 5.046163,-2.01812 1.841167,-2.08538 1.841167,-6.054325 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.9722px;line-height:1.25;font-family:'Major Mono Display';-inkscape-font-specification:'Major Mono Display';letter-spacing:-3.72798px;white-space:pre;shape-inside:url(#rect835);fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.12934"
          id="path868" />
       <path
-         d="m 90.838652,84.998377 -3.83822,-14.273383 h 24.768508 l -11.2148,41.740646 H 98.215233 L 91.978124,89.256403 85.741015,112.46564 H 83.4021 L 72.187298,70.724994 h 2.278944 L 84.541571,108.32756 Z M 108.89028,72.943965 H 89.879097 l 3.238499,12.054412 6.29708,23.329183 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.9722px;line-height:1.25;font-family:'Major Mono Display';-inkscape-font-specification:'Major Mono Display';letter-spacing:-3.72798px;white-space:pre;shape-inside:url(#rect835);fill:#ffffff;fill-opacity:1;stroke:none"
+         d="M 93.459852,85.359582 89.082221,69.080265 H 117.33161 L 104.54073,116.687 h -2.66762 L 94.759462,90.216017 87.64581,116.687 H 84.978192 L 72.187298,69.080265 h 2.59922 L 86.2778,111.96737 Z m 20.588538,-13.7485 H 92.365445 l 3.693627,13.7485 7.182048,26.607788 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.9722px;line-height:1.25;font-family:'Major Mono Display';-inkscape-font-specification:'Major Mono Display';letter-spacing:-3.72798px;white-space:pre;shape-inside:url(#rect835);fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.14054"
          id="path870" />
     </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.34292px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.754031,26.196631 h 24.014184 l 1.127561,2.505107 H 47.796493 Z"
+       id="path874" />
   </g>
 </svg>
