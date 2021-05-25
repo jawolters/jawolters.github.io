@@ -82,9 +82,9 @@ body {
 }
 .rb-container ul.rb li {
   list-style: none;
-  min-height: 50px;
+  min-height: 40px;
   border-left: 5px solid #fff;
-  padding: 0 0 50px 30px;
+  padding: 0 0 40px 30px;
   position: relative;
 }
 .rb-container ul.rb li:last-child {
@@ -221,6 +221,12 @@ body {
   padding: 10px;
   width: 100%;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.project-card .details h3 {
+  margin-top: 0.5rem;
 }
 .project-card .details a {
   text-decoration: dotted underline;
