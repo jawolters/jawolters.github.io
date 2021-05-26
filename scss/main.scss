@@ -21,32 +21,25 @@ body {
 }
 
 .intro{
+  width: 90%;
+  margin-right: 5%;
+
   a{
     color: #fff;
   }
 
   h3{
     margin-top: 1rem;
-    margin-top: 1rem;
   }
-}
-
-.banner{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-size: 5vmin;
-  font-family: 'Caveat', cursive;
-  font-display: block;
-  user-select: none;
 }
 
 .sidebar-content{
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
   margin-top: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
   font-family: 'Source Sans Pro', sans-serif;    
 }
 
@@ -192,7 +185,7 @@ body {
 .portrait{
   border-radius: 50%;
   width: 75%;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .project-card {
@@ -552,6 +545,18 @@ body {
   .publications{
     width: 100%;
   }
+
+  .intro {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .sidebar-content{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10%;
+  }
 }
 
 .rating{
@@ -574,4 +579,4 @@ body {
     transform: scale(1.2);
     transition: all 200ms ease-out;
   }
-}
+} 
