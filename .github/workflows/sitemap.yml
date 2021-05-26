@@ -1,0 +1,22 @@
+name: Generate sitemap
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate sitemap
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 
+
+    - name: Generate sitemap
+      id: sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://www.jannick-wolters.de
