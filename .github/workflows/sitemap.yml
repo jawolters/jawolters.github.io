@@ -22,6 +22,7 @@ jobs:
         base-url-path: https://www.jannick-wolters.de
 
     - name: Push sitemap
+      continue-on-error: true
       run: |
         git config --global user.name "jawolters (GitHub Actions sitemap generator)"
         git config --global user.email "mail@jannick-wolters.de"
