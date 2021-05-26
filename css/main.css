@@ -342,7 +342,7 @@ body {
 .tabs label {
   order: 1;
   display: block;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   margin-right: 0.2rem;
   cursor: pointer;
   background: #666;
@@ -396,7 +396,7 @@ body {
   display: block;
 }
 
-@media (max-width: 45em) {
+@media (max-width: 51.5em) {
   .tabs .tab,
 .tabs label {
     order: initial;
