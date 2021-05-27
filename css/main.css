@@ -20,10 +20,8 @@ body {
 .intro a {
   color: #fff;
 }
-.intro h2 {
-  margin-top: 0rem;
-  font-weight: normal;
-  font-size: 1.15rem;
+.intro h1 {
+  margin-bottom: 1rem;
 }
 
 .sidebar-content {
@@ -68,6 +66,12 @@ body {
 .main h2 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+}
+.main .intro h2 {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-size: 1.15rem;
 }
 
 .rb-container {
@@ -163,6 +167,7 @@ body {
   border-radius: 50%;
   width: 75%;
   max-width: 400px;
+  margin-bottom: 1rem;
 }
 
 .project-card {

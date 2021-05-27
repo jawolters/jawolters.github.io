@@ -22,16 +22,14 @@ body {
 .intro{
   width: 90%;
   margin-right: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 5%;  
 
   a{
     color: #fff;
-  }
+  } 
 
-  h2{
-    margin-top: 0rem;
-    font-weight: normal;
-    font-size: 1.15rem;
+  h1{
+    margin-bottom: 1rem;
   }
 }
 
@@ -78,6 +76,13 @@ body {
   h2{
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+  }
+
+  .intro h2{
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    font-size: 1.15rem;  
   }
 }
 
@@ -190,6 +195,7 @@ body {
   border-radius: 50%;
   width: 75%;
   max-width: 400px;
+  margin-bottom: 1rem;
 }
 
 .project-card {
