@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
 *,
 *::before,
@@ -176,6 +175,7 @@ body {
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
+  content-visibility: auto;
 }
 .project-card a {
   color: #fff;
@@ -318,6 +318,7 @@ body {
   margin-left: 10%;
   text-align: center;
   flex-wrap: wrap;
+  content-visibility: auto;
 }
 .languages .col {
   padding: 1em;
@@ -372,6 +373,7 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+  content-visibility: auto;
 }
 .tabs .tab .wrapper {
   display: flex;
@@ -450,6 +452,7 @@ body {
 .publications {
   width: 80%;
   margin: auto;
+  content-visibility: auto;
 }
 .publications .pub-title {
   font-size: 1.25rem;
@@ -509,6 +512,7 @@ body {
   background-color: #50d890;
   float: right;
   width: 15%;
+  content-visibility: auto;
 }
 .rating::after {
   clear: both;

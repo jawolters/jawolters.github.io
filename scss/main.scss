@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 
 $color_text: #fff;
@@ -17,7 +16,7 @@ $color_background: #333;
 
 body {
   color: $color_text;
-  background: $color-background;    
+  background: $color-background;      
 }
 
 .intro{
@@ -203,6 +202,7 @@ body {
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
+  content-visibility: auto;
 
   a {
     color: #fff;
@@ -364,6 +364,7 @@ body {
     margin-left: 10%;
     text-align: center;   
     flex-wrap: wrap; 
+    content-visibility: auto;
 
     .col{    
         padding: 1em;
@@ -425,6 +426,7 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    content-visibility: auto;
 
     .wrapper{
       display: flex;
@@ -512,6 +514,7 @@ body {
 .publications{
   width: 80%;
   margin: auto;  
+  content-visibility: auto;
 
   .pub-title{
     font-size: 1.25rem;    
@@ -579,6 +582,7 @@ body {
   background-color: $color_accent;  
   float: right;
   width: 15%;
+  content-visibility: auto;
   
   &::after{
     clear: both;
