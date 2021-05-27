@@ -28,9 +28,10 @@ body {
     color: #fff;
   }
 
-  h3{
-    margin-top: 1rem;
+  h2{
+    margin-top: 0rem;
     font-weight: normal;
+    font-size: 1.15rem;
   }
 }
 
@@ -106,7 +107,7 @@ body {
     left: -17px;
     top: -4px;
     content: " ";
-    border: 6px solid #666;
+    border: 6px solid #777;
     border-radius: 500%;
     background: $color_accent;
     height: 30px;
@@ -355,7 +356,6 @@ body {
   }
 }
 
-
 .languages{
     display: flex;
     max-width: 80%;
@@ -404,11 +404,12 @@ body {
     padding: 1rem 1.5rem;
     margin-right: 0.2rem;
     cursor: pointer;
-    background: #666;
+    background: #555;
     font-weight: bold;
     transition: background ease 500ms;
     border-top-left-radius: 10px;  
-    border-top-right-radius: 10px;   
+    border-top-right-radius: 10px;
+    box-shadow: inset 0px -4px 0px -2px #333;
 
     &:hover{
       box-shadow: 0 0 2px 2px $color_accent;
@@ -439,8 +440,8 @@ body {
       padding-right: 0.5rem;
       width: 35ch;      
 
-      li{
-        margin-left: 15px;
+      ul{                
+        margin-left: 25px;
       }
 
       a{
@@ -459,7 +460,7 @@ body {
   }
 
   input[type="radio"]:checked + label {
-	  background: $color_accent;
+    box-shadow: inset 0px -4px 0px -2px $color_accent;
   }
   
   input[type="radio"]:checked + label + .tab {
