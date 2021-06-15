@@ -16,7 +16,7 @@ $color_background: #333;
 
 body {
   color: $color_text;
-  background: $color-background;      
+  background: $color-background;
 }
 
 .intro{
@@ -57,6 +57,13 @@ body {
   text-align: center;
 }
 
+.portrait{
+  border-radius: 50%;
+  width: 75%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
 .icons{
   display: flex;
   justify-content: center;
@@ -71,7 +78,7 @@ body {
 }
 
 .main{
-  padding: 1em;
+  padding: 1em;   
 
   h2{
     margin-top: 2rem;
@@ -86,7 +93,7 @@ body {
   }
 }
 
-.rb-container {
+.timeline {
   width: 80%;
   display: block;
   position: relative;    
@@ -183,19 +190,6 @@ body {
   a:hover{
     color: $color_accent;
   }
-}
-
-@media (max-width: 51.5em) {
-  .rb-container{
-    width: 100%;
-  }
-}
-
-.portrait{
-  border-radius: 50%;
-  width: 75%;
-  max-width: 400px;
-  margin-bottom: 1rem;
 }
 
 .project-card {
@@ -474,50 +468,6 @@ body {
   } 
 }
 
-@media (max-width: 51.5em) {
-  .tabs .tab,
-  .tabs label {
-    order: initial;
-  }
-  .tabs{
-    width: 100%;
-  }
-
-  .tabs label {
-    width: 100%;
-    margin-right: 0;
-    margin-top: 0.2rem;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;    
-  }
-
-  .tabs .tab {
-    border-top-right-radius: 0px;
-  }
-
-  .tabs label:hover{
-    box-shadow: none;
-  }
-
-  input[type="radio"]:checked + label {
-	  background: $color_accent;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-
-  .tabs .tab .wrapper{
-    justify-content: flex-start;
-  }
-
-  .tabs .tab .wrapper .section{
-    margin-left: 0px;
-    width: 100%;
-    li{
-      margin-left: 10px;
-    }
-  }
-}
-
 .publications{
   width: 80%;
   margin: auto;  
@@ -559,24 +509,6 @@ body {
   }
 }
 
-@media (max-width: 51.5em) {  
-  .publications{
-    width: 100%;
-  }
-
-  .intro {
-    width: 100%;
-    margin-right: 0;
-    margin-top: -30px;
-  }
-
-  .sidebar-content{
-    width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 10%;
-  }
-}
 
 .rating{
   display: inline;
@@ -599,4 +531,69 @@ body {
     transform: scale(1.2);
     transition: all 200ms ease-out;
   }
-} 
+}
+
+@media (max-width: 51.5em) {  
+  .timeline{
+    width: 100%;
+  }
+
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs{
+    width: 100%;
+  }
+
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+  }
+
+  .tabs .tab {
+    border-top-right-radius: 0px;
+  }
+
+  .tabs label:hover{
+    box-shadow: none;
+  }
+
+  input[type="radio"]:checked + label {
+	  background: $color_accent;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .tabs .tab .wrapper{
+    justify-content: flex-start;
+  }
+
+  .tabs .tab .wrapper .section{
+    margin-left: 0px;
+    width: 100%;
+    li{
+      margin-left: 10px;
+    }
+  }
+
+  .publications{
+    width: 100%;
+  }
+
+  .intro {
+    width: 100%;
+    margin-right: 0;
+    margin-top: -30px;
+  }
+
+  .sidebar-content{
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 10%;
+  }
+}

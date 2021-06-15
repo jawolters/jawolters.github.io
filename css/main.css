@@ -48,6 +48,13 @@ body {
   text-align: center;
 }
 
+.portrait {
+  border-radius: 50%;
+  width: 75%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
 .icons {
   display: flex;
   justify-content: center;
@@ -74,7 +81,7 @@ body {
   font-size: 1.15rem;
 }
 
-.rb-container {
+.timeline {
   width: 80%;
   display: block;
   position: relative;
@@ -82,18 +89,18 @@ body {
   margin-top: 20px;
   margin-bottom: -20px;
 }
-.rb-container ul.rb li {
+.timeline ul.rb li {
   list-style: none;
   min-height: 40px;
   border-left: 5px solid #fff;
   padding: 0 0 40px 30px;
   position: relative;
 }
-.rb-container ul.rb li:last-child {
+.timeline ul.rb li:last-child {
   border-left: 0;
   margin-left: 5px;
 }
-.rb-container ul.rb li::before {
+.timeline ul.rb li::before {
   position: absolute;
   left: -17px;
   top: -4px;
@@ -105,69 +112,57 @@ body {
   width: 30px;
   transition: all 400ms ease-in-out;
 }
-.rb-container ul.rb li:hover::before {
+.timeline ul.rb li:hover::before {
   border-color: #fff;
   transition: all 400ms ease-in-out;
 }
-.rb-container li:last-child:hover {
+.timeline li:last-child:hover {
   border-bottom-left-radius: 20px 20px;
 }
-.rb-container .rb-item:hover {
+.timeline .rb-item:hover {
   background-color: #555;
   transition: background-color 400ms ease-out;
   border-top-right-radius: 20px 20px;
   border-bottom-right-radius: 20px 20px;
 }
-.rb-container ul.rb li .timestamp {
+.timeline ul.rb li .timestamp {
   color: #50d890;
   position: relative;
 }
-.rb-container ul.rb li .title {
+.timeline ul.rb li .title {
   position: relative;
   font-size: 1.2em;
   font-weight: bold;
 }
-.rb-container ul.rb li .description {
+.timeline ul.rb li .description {
   position: relative;
   font-size: 0.9em;
   color: #ccc;
 }
-.rb-container ul.rb li .thesis {
+.timeline ul.rb li .thesis {
   position: relative;
   font-style: italic;
   color: #ccc;
 }
-.rb-container ul.rb li .thesis::before {
+.timeline ul.rb li .thesis::before {
   content: "Thesis: ";
   font-style: normal;
 }
-.rb-container ul.rb li .topic {
+.timeline ul.rb li .topic {
   position: relative;
   font-style: italic;
   color: #ccc;
 }
-.rb-container ul.rb li .topic::before {
+.timeline ul.rb li .topic::before {
   content: "Topic: ";
   font-style: normal;
 }
-.rb-container a {
+.timeline a {
   color: #fff;
   text-decoration: underline dotted #999;
 }
-.rb-container a:hover {
+.timeline a:hover {
   color: #50d890;
-}
-
-@media (max-width: 51.5em) {
-  .rb-container {
-    width: 100%;
-  }
-}
-.portrait {
-  border-radius: 50%;
-  width: 75%;
-  max-width: 400px;
-  margin-bottom: 1rem;
 }
 
 .project-card {
@@ -412,7 +407,66 @@ body {
   display: block;
 }
 
+.publications {
+  width: 80%;
+  margin: auto;
+  content-visibility: auto;
+}
+.publications .pub-title {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+.publications .pub-title::before {
+  content: '"';
+  font-style: normal;
+  margin-right: -0.2rem;
+}
+.publications .pub-title::after {
+  content: '"';
+  font-style: normal;
+}
+.publications i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+.publications li {
+  list-style: none;
+  padding: 0.5rem;
+}
+.publications a {
+  color: white;
+  text-decoration: none;
+}
+.publications a:hover {
+  color: #50d890;
+}
+
+.rating {
+  display: inline;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7rem;
+  margin-right: 5px;
+  padding: 2px;
+  background-color: #50d890;
+  float: right;
+  width: 15%;
+  content-visibility: auto;
+}
+.rating::after {
+  clear: both;
+}
+.rating:hover {
+  transform: scale(1.2);
+  transition: all 200ms ease-out;
+}
+
 @media (max-width: 51.5em) {
+  .timeline {
+    width: 100%;
+  }
+
   .tabs .tab,
 .tabs label {
     order: initial;
@@ -455,42 +509,7 @@ body {
   .tabs .tab .wrapper .section li {
     margin-left: 10px;
   }
-}
-.publications {
-  width: 80%;
-  margin: auto;
-  content-visibility: auto;
-}
-.publications .pub-title {
-  font-size: 1.25rem;
-  font-style: italic;
-}
-.publications .pub-title::before {
-  content: '"';
-  font-style: normal;
-  margin-right: -0.2rem;
-}
-.publications .pub-title::after {
-  content: '"';
-  font-style: normal;
-}
-.publications i {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-}
-.publications li {
-  list-style: none;
-  padding: 0.5rem;
-}
-.publications a {
-  color: white;
-  text-decoration: none;
-}
-.publications a:hover {
-  color: #50d890;
-}
 
-@media (max-width: 51.5em) {
   .publications {
     width: 100%;
   }
@@ -507,26 +526,6 @@ body {
     margin-right: 1%;
     margin-top: 10%;
   }
-}
-.rating {
-  display: inline;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.7rem;
-  margin-right: 5px;
-  padding: 2px;
-  background-color: #50d890;
-  float: right;
-  width: 15%;
-  content-visibility: auto;
-}
-.rating::after {
-  clear: both;
-}
-.rating:hover {
-  transform: scale(1.2);
-  transition: all 200ms ease-out;
 }
 
 /*# sourceMappingURL=main.css.map */
