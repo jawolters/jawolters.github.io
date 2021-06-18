@@ -50,8 +50,8 @@ body {
 
 .portrait {
   border-radius: 50%;
-  width: 75%;
-  max-width: 400px;
+  width: 20vw;
+  height: 20vw;
   margin-bottom: 1rem;
 }
 
@@ -568,6 +568,13 @@ body {
 
   .intro h2 {
     animation: 1s ease-in-out fadein;
+  }
+
+  .portrait {
+    width: 75vw;
+    height: 75vw;
+    max-width: 400px;
+    max-height: 400px;
   }
 }
 footer .terms {
