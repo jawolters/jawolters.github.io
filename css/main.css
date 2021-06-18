@@ -571,6 +571,7 @@ body {
   }
 }
 footer .terms {
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   padding: 1rem;
   margin-top: 1rem;
@@ -581,11 +582,12 @@ footer .terms a {
 }
 
 .terms {
+  font-family: "Source Sans Pro", sans-serif;
   width: 80%;
-  margin: 0% 0% 10% 10%;
+  margin: 5% 0% 10% 10%;
 }
 .terms h1 {
-  padding-top: 2em;
+  padding-top: 1.5em;
 }
 .terms h2 {
   text-align: left;

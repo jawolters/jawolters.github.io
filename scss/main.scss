@@ -69,7 +69,7 @@ body {
   justify-content: center;
   min-height: 100px;
   margin-left: 25%;
-  margin-right: 25%;  
+  margin-right: 25%;
 
   a {
     color: #fff;
@@ -97,8 +97,8 @@ body {
 
   h2 {
     margin-top: 2rem;
-    margin-bottom: 0.5rem;    
-  }  
+    margin-bottom: 0.5rem;
+  }
 
   .intro h2 {
     margin-top: 0rem;
@@ -629,7 +629,7 @@ body {
     margin-top: 10%;
   }
 
-  .icons{
+  .icons {
     animation: 1.4s ease-out folddown;
   }
 
@@ -638,27 +638,29 @@ body {
     animation: 0.5s ease-out slide-right forwards;
   }
 
-  .intro h2{
+  .intro h2 {
     animation: 1s ease-in-out fadein;
   }
 }
 
-footer .terms{
+footer .terms {
+  font-family: "Source Sans Pro", sans-serif;
   text-align: center;
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  a{
-    color:$color_secondary;
+  a {
+    color: $color_secondary;
   }
 }
 
 .terms {
+  font-family: "Source Sans Pro", sans-serif;
   width: 80%;
-  margin: 0% 0% 10% 10%;
+  margin: 5% 0% 10% 10%;
 
   h1 {
-    padding-top: 2em;
+    padding-top: 1.5em;
   }
 
   h2 {
