@@ -352,7 +352,7 @@ body {
     }
   }
 
-  @media (min-width: 51.5em) {
+  @media (max-width: 1100px) {
     flex-direction: row;
     max-width: 80%;
     .meta {
@@ -565,7 +565,7 @@ body {
   }
 }
 
-@media (max-width: 51.5em) {
+@media (max-width: 1100px) {
   .timeline {
     width: 100%;
   }
@@ -574,6 +574,7 @@ body {
   .tabs label {
     order: initial;
   }
+
   .tabs {
     width: 100%;
   }

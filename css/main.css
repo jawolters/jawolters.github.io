@@ -305,7 +305,7 @@ body {
 .project-card:hover .details {
   left: 0%;
 }
-@media (min-width: 51.5em) {
+@media (max-width: 1100px) {
   .project-card {
     flex-direction: row;
     max-width: 80%;
@@ -492,7 +492,7 @@ body {
   transition: all 200ms ease-out;
 }
 
-@media (max-width: 51.5em) {
+@media (max-width: 1100px) {
   .timeline {
     width: 100%;
   }
