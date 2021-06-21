@@ -470,6 +470,9 @@ body {
 .publications a:hover {
   color: #50d890;
 }
+.publications li:nth-child(4) {
+  margin-bottom: 10%;
+}
 
 .rating {
   display: inline;
@@ -586,32 +589,6 @@ body {
     margin-right: 1%;
     margin-top: 10%;
   }
-}
-footer .terms {
-  font-family: "Source Sans Pro", sans-serif;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-footer .terms a {
-  color: #999;
-}
-
-.terms {
-  font-family: "Source Sans Pro", sans-serif;
-  width: 80%;
-  margin: 5% 0% 10% 10%;
-}
-.terms h1 {
-  padding-top: 1.5em;
-}
-.terms h2 {
-  text-align: left;
-  padding-top: 0.5em;
-}
-.terms a {
-  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -540,6 +540,10 @@ body {
   a:hover {
     color: $color_accent;
   }
+
+  li:nth-child(4){
+    margin-bottom: 10%;
+  }
 }
 
 .rating {
@@ -659,35 +663,5 @@ body {
     margin-left: 1%;
     margin-right: 1%;
     margin-top: 10%;
-  }
-}
-
-footer .terms {
-  font-family: "Source Sans Pro", sans-serif;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  a {
-    color: $color_secondary;
-  }
-}
-
-.terms {
-  font-family: "Source Sans Pro", sans-serif;
-  width: 80%;
-  margin: 5% 0% 10% 10%;
-
-  h1 {
-    padding-top: 1.5em;
-  }
-
-  h2 {
-    text-align: left;
-    padding-top: 0.5em;
-  }
-
-  a {
-    color: white;
   }
 }
