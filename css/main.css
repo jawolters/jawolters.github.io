@@ -592,7 +592,7 @@ body {
 }
 canvas {
   width: 100vw;
-  height: 100vh;
+  height: 99.5vh;
   max-width: 100%;
 }
 
