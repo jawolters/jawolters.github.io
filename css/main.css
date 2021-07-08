@@ -590,5 +590,10 @@ body {
     margin-top: 10%;
   }
 }
+canvas {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+}
 
 /*# sourceMappingURL=main.css.map */
