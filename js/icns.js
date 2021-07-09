@@ -217,7 +217,7 @@ async function main() {
 
   function simulate() {
     t = Date.now();
-    dt = Math.min((t - tOld) / 1000, 0.05);
+    dt = Math.min((t - tOld) / 1000, 1./60.);
     tOld = t;
 
     gl.disable(gl.BLEND);
