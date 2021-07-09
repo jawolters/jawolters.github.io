@@ -234,7 +234,7 @@ async function main() {
     gl.useProgram(pressureProgram);
     gl.uniform2fv(pressureParams.dx, [dx, dy]);
     gl.uniform1i(pressureParams.div, div.activate(0));
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       gl.uniform1i(pressureParams.u, p.old.activate(1));
       execProgram(p.new.framebuffer);
       p.swapMem();

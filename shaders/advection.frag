@@ -26,7 +26,7 @@ void main(){
     if(cT.y > 1.0 || cB.y < 0.0) uNew.xy = vec2(ux, 0.0);
 
     // Karman vortex street cylinder
-    vec2 cyl = vec2(0.25, 0.5);
+    vec2 cyl = vec2(0.5, 0.5);
     vec2 xC = vec2(x.x * aspectRatio, x.y);    
     if(length(xC - cyl) < 0.04) uNew.xyz = vec3(0.0);
 
@@ -34,4 +34,7 @@ void main(){
     if(x.x <= dx.x){
         if(cos((x.y - 0.5) * 160.) > 0.5) uNew.z = 1.0;            
     }
+
+    // dissipate dye
+    uNew.z /= 1.0005;
 }
