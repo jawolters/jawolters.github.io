@@ -1,7 +1,6 @@
 "use strict";
 
-async function main() {
-  const canvas = document.getElementsByTagName("canvas")[0];
+async function runSimulation(canvas, gl) {
   resizeCanvas();
 
   let width = canvas.clientWidth;
@@ -22,18 +21,6 @@ async function main() {
   }
 
   let pointer = new pointerPrototype();
-
-  const params = {
-    alpha: true,
-    depth: false,
-    stencil: false,
-    antialias: false,
-    preserveDrawingBuffer: false,
-  };
-  let gl = canvas.getContext("webgl2", params);
-  if (!gl) {
-    return;
-  }
 
   gl.getExtension("EXT_color_buffer_float");
   gl.getExtension("OES_texture_float_linear");
@@ -217,7 +204,7 @@ async function main() {
 
   function simulate() {
     t = Date.now();
-    dt = Math.min((t - tOld) / 1000, 1./60.);
+    dt = Math.min((t - tOld) / 1000, 1 / 60);
     tOld = t;
 
     gl.disable(gl.BLEND);
@@ -355,4 +342,30 @@ async function main() {
   }
 }
 
-main();
+const canvas = document.getElementsByTagName("canvas")[0];
+
+const params = {
+  alpha: true,
+  depth: false,
+  stencil: false,
+  antialias: false,
+  preserveDrawingBuffer: false,
+};
+let gl = canvas.getContext("webgl2", params);
+
+if (!gl) {
+  var elem = document.createElement("div");
+  elem.id = "nowebgl2";
+  elem.innerHTML =
+    "<h1>This simulation requires WebGL2, which is sadly not supported by your current browser!</h1>";
+  elem.style.display = "flex";
+  elem.style.justifyContent = "center";
+  elem.style.textAlign = "center";
+  elem.style.marginTop = "48vh";
+  elem.style.marginLeft = "20%";
+  elem.style.marginRight = "20%";
+  document.querySelector('body').replaceChild(elem, canvas);
+  console.log(document.body);
+} else {
+  runSimulation(canvas, gl);
+}
