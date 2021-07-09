@@ -353,15 +353,16 @@ const params = {
 };
 let gl = canvas.getContext("webgl2", params);
 
-if (!gl) {
+if (gl) {
   var elem = document.createElement("div");
   elem.id = "nowebgl2";
   elem.innerHTML =
-    "<h1>This simulation requires WebGL2, which is sadly not supported by your current browser!</h1>";
+    "<h2>This simulation requires WebGL2, which is not supported by your current browser! A list of compatible alternatives can be found <a href='https://caniuse.com/webgl2' style='color:#fff;'>here</a>.</h2>";
   elem.style.display = "flex";
   elem.style.justifyContent = "center";
   elem.style.textAlign = "center";
-  elem.style.marginTop = "48vh";
+  elem.style.alignItems = "center";
+  elem.style.height = "99.5vh"
   elem.style.marginLeft = "20%";
   elem.style.marginRight = "20%";
   document.querySelector('body').replaceChild(elem, canvas);
