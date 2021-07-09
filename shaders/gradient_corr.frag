@@ -20,6 +20,6 @@ void main () {
     float T = texture(p, cT).x;
     float B = texture(p, cB).x;
     
-    grad.xy =  texture(u, x).xy - vec2(R - L, T - B);
+    grad.xy = texture(u, x).xy - vec2(R - L, T - B);
     grad.z  = texture(u, x).z;
 }

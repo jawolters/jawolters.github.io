@@ -18,7 +18,7 @@ uniform float aspectRatio;
 out vec4 uNew;
 
 void main(){    
-    vec2 xNew = x - dt * texture(u, x).xy * dx;    
+    vec2 xNew = x - dt * texture(u, x).xy * dx;
     uNew.xyz = texture(u, xNew).xyz; 
 
     // BC
@@ -31,7 +31,7 @@ void main(){
     if(length(xC - cyl) < 0.04) uNew.xyz = vec3(0.0);
 
     // add dye as streamlines
-    if(x.x < 0.01){
+    if(x.x <= dx.x){
         if(cos((x.y - 0.5) * 160.) > 0.5) uNew.z = 1.0;            
     }
 }
