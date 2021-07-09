@@ -353,7 +353,7 @@ const params = {
 };
 let gl = canvas.getContext("webgl2", params);
 
-if (gl) {
+if (!gl) {
   var elem = document.createElement("div");
   elem.id = "nowebgl2";
   elem.innerHTML =
