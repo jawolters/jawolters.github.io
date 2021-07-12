@@ -1,440 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Jannick Wolters</title>
+    <meta chatset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="Jannick Wolters" />
+    <meta
+      name="description"
+      content="Jannick Wolters's digital CV with information about education, skills, projects and how to get in touch."
+    />
+    <meta name="theme-color" content="#333333" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script
+      async
+      src="https://kit.fontawesome.com/ccd7027b6e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CV7KKXMDZF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-CV7KKXMDZF", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    </script>
+  </head>
 
-<head>
-  <title>Jannick Wolters</title>
-  <meta chatset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="author" content="Jannick Wolters">
-  <meta name="description"
-    content="Jannick Wolters's digital CV with information about education, skills, projects and how to get in touch.">
-  <meta name="theme-color" content="#333333">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/x-icon" href="img/logo.svg">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script async src="https://kit.fontawesome.com/ccd7027b6e.js" crossorigin="anonymous"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV7KKXMDZF"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-CV7KKXMDZF', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });</script>
-</head>
-
-<body>
-  <div class="sidebar-content">
-    <div class="sidebar">
-      <img class="portrait" widht=500 height=500 src="img/portait.jpg" alt="Jannick Wolters"></img>
-      <h2>Jannick Wolters</h2>
-      Applied Mathematician
-      <div class="icons">
-        <a href="mailto:mail@jannick-wolters.de" aria-label="E-Mail"><i class="fas fa-envelope fa-2x"></i></a>
-        <a href="https://github.com/jawolters" aria-label="Github"><i class="fab fa-github-square fa-2x"></i></a>
-        <a href="https://www.xing.com/profile/jannick_wolters/" aria-label="Xing"><i
-            class="fab fa-xing-square fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/jannick-wolters/" aria-label="LinkedIn"><i
-            class="fab fa-linkedin fa-2x"></i></a>
+  <body>
+    <div class="landing_wrapper">
+      <canvas></canvas>            
+      <script async src="js/icns.js"></script>
+      
+      <div class="landing">
+        <div class="landing_content">
+          <h1>Jannick Wolters</h1>
+          <h2>Applied Mathematician</h2>
+        </div>
+        <div class="landing_arrow">
+          <svg width="150px" height="100px" viewBox="-320 -30 240 380">
+            <g transform="translate(-680,-120)">
+            <path
+                d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937
+        c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937
+        c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"
+              />
+          </svg>
+        </div>        
       </div>
     </div>
-    <div class="main">
-      <div class="intro">
-        <h1>Hi, I'm Jannick!</h1>
-        <h2>I am 31 years old and currently living in the beautiful city of Aachen, Germany.</h2>
-        <h2>Right now I am on the verge of finishing my Ph.D. at Karlsruhe Institute of Technology and I am already
-          looking forward to new challenges.<br>
-          My passion is solving complex real world problems from the realm of transport equations on modern HPC
-          architectures.</h2>
-        <h2>In case you are looking for a more conventional CV, a PDF version is available for <a
-            href="./downloads/CV_Jannick_Wolters.pdf" aria-label="CV Jannick Wolters">download</a>.</h2>
-      </div>
-      <h2>Education / Professional Experience</h2>
-      <div class="timeline">
-        <ul class="rb">
-          <li class="rb-item" data-aos="fade-left">
-            <div class="timestamp">Since March 2017</div>
-            <div class="title">Ph.D. in Mathematics</div>
-            <div class="description">Karlsruhe Institute of Technology (KIT)</div>
-            <div class="description">Steinbuch Centre for Computing (SCC), <a
-                href="https://www.scc.kit.edu/ueberuns/rg-csmm.php">CSMM Research group</a></div>
-            <div class="description">Supervisor: <a href="https://www.scc.kit.edu/personen/martin.frank.php">Prof. Dr.
-                Martin Frank</a></div>
-            <div class="thesis">"Uncertainty Quantification for the evaluation of PGNAA spectra"</div>
-          </li>
-          <li class="rb-item" data-aos="fade-left">
-            <div class="timestamp">March 2017</div>
-            <div class="title">M.Sc. Computational Engineering Science</div>
-            <div class="description">RWTH Aachen</div>
-            <div class="thesis">"Uncertainty Quantification of wind farm models"</div>
-          </li>
-          <li class="rb-item" data-aos="fade-left">
-            <div class="timestamp">March 2015</div>
-            <div class="title">B.Sc. Computational Engineering Science</div>
-            <div class="description"> RWTH Aachen</div>
-            <div class="thesis">"MHD simulations in OpenFOAM"</div>
-          </li>
-          <li class="rb-item" data-aos="fade-left">
-            <div class="timestamp">2013/2014</div>
-            <div class="title">Internship</div>
-            <div class="description">ABB Switzerland Ltd. Research Center Baden</div>
-            <div class="topic">"Power Device simulations in OpenFOAM"</div>
-          </li>
-        </ul>
-      </div>
 
-      <h2>Areas of Expertise</h2>
-      <div class="tabs" data-aos="fade-up">
-        <input type="radio" name="tabs" id="tabone" checked="checked">
-        <label for="tabone">Mathematics<i class="fas fa-square-root-alt" style="margin-left: 0.5em;"></i></label>
-        <div class="tab">
-          <h3>Mathematical topics I have worked on during my education/research</h3>
-          <div class="wrapper">
-            <div class="section">
-              <h3>Topics</h3>
-              <ul>
-                <li>Particle transport<div class="rating expert">PRO</div>
-                </li>
-                <li>Uncertainty Quantification<div class="rating expert">PRO</div>
-                </li>
-                <li>Inverse Problems<div class="rating expert">ADV</div>
-                </li>
-                <li>Machine learning<div class="rating expert">BASIC</div>
-                </li>
-              </ul>
-            </div>
-            <div class="section">
-              <h3>Numerical Methods</h3>
-              <ul>
-                <li>Finite Volume Method<div class="rating expert">PRO</div>
-                </li>
-                <li>Finite Element Method<div class="rating expert">PRO</div>
-                </li>
-                <li>Sparse Reconstruction<div class="rating expert">ADV</div>
-                </li>
-                <li>Continous Optimization<div class="rating expert">BASIC</div>
-                </li>
-              </ul>
-            </div>
-            <div class="section">
-              <h3>Equations</h3>
-              <ul>
-                <li>Boltzmann<div class="rating expert">PRO</div>
-                </li>
-                <li>Navier-Stokes<div class="rating expert">PRO</div>
-                </li>
-                <li>Magnetohydrodynamics<div class="rating expert">ADV</div>
-                </li>
-                <li>Maxwell<div class="rating expert">BASIC</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <input type="radio" name="tabs" id="tabtwo">
-        <label for="tabtwo">Computer Science <i class="fas fa-laptop-code" style="margin-left: 0.5em;"></i></label>
-        <div class="tab">
-          <h3>Familiar Programming Languages and Libraries</h3>
-          <div class="wrapper">
-            <div class="section">
-              <h3>HPC</h3>
-              <ul>
-                <li>MPI<div class="rating expert">PRO</div>
-                </li>
-                <li>OpenMP<div class="rating expert">PRO</div>
-                </li>
-                <li>OpenACC<div class="rating expert">BASIC</div>
-                </li>
-                <li>PETSc<div class="rating expert">BASIC</div>
-                </li>
-              </ul>
-            </div>
-            <div class="section">
-              <h3>Data Science</h3>
-              <ul>
-                <li>numpy<div class="rating expert">PRO</div>
-                </li>
-                <li>scipy<div class="rating expert">PRO</div>
-                </li>
-                <li>pandas<div class="rating expert">PRO</div>
-                </li>
-                <li>Tensorflow<div class="rating expert">ADV</div>
-                </li>
-                <li>Keras<div class="rating expert">ADV</div>
-                </li>
-              </ul>
-            </div>
-            <div class="section">
-              <h3>Software development</h3>
-              <ul>
-                <li>Git<div class="rating expert">PRO</div>
-                </li>
-                <li>Scrum<div class="rating expert">ADV</div>
-                </li>
-                <li>Docker<div class="rating expert">PRO</div>
-                </li>
-                <li>CI<div class="rating expert">PRO</div>
-                </li>
-                <li>CMake<div class="rating expert">PRO</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="section">
-            <h3>Languages</h3>
-          </div>
-          <div class="languages">
-            <div class="col">
-              <img src="img/cpp.svg" alt="C++"></img>
-              <br>
-              <div class="rating expert">PRO</div>
-            </div>
-            <div class="col">
-              <img src="img/python.png" alt="Python"></img>
-              <br>
-              <div class="rating expert">PRO</div>
-            </div>
-            <div class="col">
-              <img src="img/matlab.png" alt="Matlab"></img>
-              <br>
-              <div class="rating expert">PRO</div>
-            </div>
-            <div class="col">
-              <img src="img/julia.svg" alt="Julia"></img>
-              <br>
-              <div class="rating expert">ADV</div>
-            </div>
-          </div>
-        </div>
-
-        <input type="radio" name="tabs" id="tabthree">
-        <label for="tabthree">Software Packages<i class="fas fa-save" style="margin-left: 0.5em;"></i></label>
-        <div class="tab">
-          <h3>Well known software packages I have worked with</h1>
-            <div class="wrapper">
-              <div class="section">
-                <h3>Fluid Dynamics</h3>
-                <ul>
-                  <li><a href="https://fenicsproject.org/">FEniCS</a>
-                    <div class="rating expert">PRO</div>
-                  </li>
-                  <li><a href="https://www.openfoam.com/">OpenFOAM</a>
-                    <div class="rating expert">PRO</div>
-                  </li>
-                  <li><a href="https://www.dealii.org/">deal.ii</a>
-                    <div class="rating expert">BASIC</div>
-                  </li>
-                </ul>
-              </div>
-              <div class="section">
-                <h3>Particle transport</h3>
-                <ul>
-                  <li><a href="https://openmc.org/">OpenMC</a>
-                    <div class="rating expert">PRO</div>
-                  </li>
-                  <li>ELSEPA<div class="rating expert">BASIC</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <div class="aboutme">
+      <div class="aboutme_left">
+        <img class="portrait" widht=500 height=500 src="img/portrait.jpg" alt="Jannick Wolters"></img>
+        <div class="icons">
+          <a href="mailto:mail@jannick-wolters.de" aria-label="E-Mail"><i class="fas fa-envelope fa-2x"></i></a>
+          <a href="https://github.com/jawolters" aria-label="Github"><i class="fab fa-github-square fa-2x"></i></a>
+          <a href="https://www.xing.com/profile/jannick_wolters/" aria-label="Xing"><i
+              class="fab fa-xing-square fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/jannick-wolters/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin fa-2x"></i></a>
         </div>
       </div>
-
-      <h2>Portfolio/Projects</h2>
-      <div class="projects">
-        <div class="project-card" data-aos="fade-left">
-          <div class="meta">
-            <div class="photo" style="background-image: url(img/data.jpg)"></div>
-            <ul class="details">
-              <li class="tags">
-                <h3>Topic:</h3>
-              <li>Finite element method</li>
-              <li>Particle transport</li>
-              <li>Inverse problems</li>
-              <li>Uncertainty quantification</li>
-              <li>Spectrum analysis</li>
-              <li>Sparse reconstruction</li>
-              </li>
-              <li class="tags">
-                <h3>Tools used:</h3>
-              <li>Python</li>
-              <li>C++</li>
-              <li>MPI/OpenMP</li>
-              <li>Docker</li>
-              <li>gRPC</li>
-              </li>
-            </ul>
-          </div>
-          <div class="description">
-            <h1>ZEBRA<a href="https://www.nuclear-training.de/project-details/zebra_en.html" style="float: right;"
-                aria-label="AiNT GmbH"><i class="fas fa-link" style="font-size: 1.25rem;"></i></a></h1>
-            <h2>EFRE.NRW Project in cooperation with AiNT GmbH</h2>
-            <p>As a winner of the market competition EnergieUmweltwirtschaft.NRW, the federal state NRW funded
-              innovative developments in the field of environmental technologies with the help of European Union funds.
-              In cooperation with AiNT GmbH an innovative measurement system was developed for non-destructive
-              environmental and hazardous substance analysis. This measurement system is based on the prompt and delayed
-              gamma neutron activation analysis (P&DGNAA). The project included the development of new analytical
-              methods for determining the mass fractions of materials inside an unknown sample.</p>
-          </div>
-        </div>
-        <div class="project-card alt" data-aos="fade-right">
-          <div class="meta">
-            <div class="photo" style="background-image: url(img/uqcreator.png); background-color: #fff;"></div>
-            <ul class="details">
-              <li class="tags">
-                <h3>Topic:</h3>
-              <li>Uncertainty quantification</li>
-              <li>Finite volume method</li>
-              </li>
-              <li class="tags">
-                <h3>Tools used:</h3>
-              <li>C++</li>
-              <li>MPI</li>
-              <li>OpenMP</li>
-              </li>
-            </ul>
-          </div>
-          <div class="description">
-            <h1>UQCreator<a href="https://github.com/CSMMLab/UQCreator" style="float: right;"
-                aria-label="UQCreator Github"><i class="fab fa-github-square"></i></a></h1>
-            <h2>HPC Uncertainty Quantification framework</h2>
-            <p>The uncertainty quantification framework UQCreator provides various uncertainty propagation tools for
-              hyperbolic conservation laws. Its main idea is to use kinetic numerical fluxes and source terms, which
-              evaluate a given deterministic problem at different sample points. This hybridization of intrusive and
-              non-intrusive methods significantly reduces numerical costs, yields an efficient parallelization with
-              OpenMP and MPI while allowing an easy extension to various problems into the framework.</p>
-          </div>
-        </div>
-        <div class="project-card" data-aos="fade-left">
-          <div class="meta">
-            <div class="photo" style="background-image: url(img/kitrt.png)"></div>
-            <ul class="details">
-              <li class="tags">
-                <h3>Topic:</h3>
-              <li>Particle transport</li>
-              <li>Finite volume method</li>
-              </li>
-              <li class="tags">
-                <h3>Tools used:</h3>
-              <li>C++</li>
-              <li>Python</li>
-              <li>MPI/OpenMP</li>
-              </li>
-            </ul>
-          </div>
-          <div class="description">
-            <h1>KiT-RT<a href="https://github.com/CSMMLab/KiT-RT" style="float: right;" aria-label="KiT-RT Github"><i
-                  class="fab fa-github-square"></i></a></h1>
-            <h2>HPC Radiation Therapy framework</h2>
-            <p>The KiT-RT (Kinetic Transport Solver for Radiation Therapy) framework is a high-performance open source
-              platform for radiation transport. Its main focus is on radiotherapy planning in cancer treatment.
-              Furthermore, it also provides tools to investigate various research questions in the field of radiative
-              transfer. This goal is supported by an easily extendable code structure that allows for straightforward
-              implementation of additional methods and techniques.</p>
-          </div>
-        </div>
-        <div class="project-card alt" data-aos="fade-right">
-          <div class="meta">
-            <div class="photo" style="background-image: url(img/offshore.jpg)"></div>
-            <ul class="details">
-              <li class="tags">
-                <h3>Topic:</h3>
-              <li>Renewable energy</li>
-              <li>Uncertainty quantification</li>
-              </li>
-              <li class="tags">
-                <h3>Tools used:</h3>
-              <li>C++</li>
-              <li>OpenMP</li>
-              </li>
-            </ul>
-          </div>
-          <div class="description">
-            <h1>Renewable Energy<a href="https://www.energy.rwth-aachen.de" style="float: right;"
-                aria-label="Renewable Energy & Energy Efficiency"><i class="fas fa-link"
-                  style="font-size: 1.25rem;"></i></a></h1>
-            <h2>Sensitivity Analysis of Offshore Wind Farms</h2>
-            <p>As uncertainties in modeling/input parameters like wind direction, turbine energy generation
-              characteristics and economic factors are crucial in the prediction of the annual power production of an
-              offshore wind farm and generally very difficult to assess, we developed a powerful tool to quantify the
-              effects of these uncertainties for arbitrary wind farms. The tools makes use of advanced techniques for
-              high dimensional numerical integration and therefore is capable of computing comprehensive sensitivity
-              information with low computational effort. </p>
-          </div>
-        </div>
-      </div>
-
-
-      <h2>Publications</h2>
-      <div class="publications">
-        <ul>
-          <li data-aos="fade-up">
-            <table>
-              <td><i class="far fa-newspaper"></i></td>
-              <td>
-                <div class="pub-title">
-                  Sparse signal reconstruction for prompt gamma neutron activation analysis.
-                </div>
-                <div class="pub-journal">
-                  J. Wolters, K. Krycki, M. Frank<br>in progress
-                </div>
-              </td>
-            </table>
-          </li>
-          <li data-aos="fade-up">
-            <table>
-              <td><i class="far fa-newspaper"></i></td>
-              <td>
-                <div class="pub-title">
-                  Uncertainty Quantification of Offshore Wind Farms Using Monte Carlo and Sparse Grids.
-                </div>
-                <div class="pub-journal">
-                  P. Richter, J. Wolters, M. Frank<br>Journal of Energy Sources, Part B: Economics, Planning, and
-                  Policy, in revision
-                </div>
-              </td>
-            </table>
-          </li>
-          <li data-aos="fade-up">
-            <table>
-              <td><i class="far fa-newspaper"></i></td>
-              <td>
-                <a href="https://link.springer.com/chapter/10.1007/978-3-030-72850-2_2">
-                  <div class="pub-title">
-                    Entropy–based methods for uncertainty quantification of hyperbolic conservation laws.
-                  </div>
-                </a>
-                <div class="pub-journal">
-                  M. Frank, J.Kusch, J. Wolters<br>Springer International Publishing, 2021
-                </div>
-              </td>
-            </table>
-          </li>
-          <li data-aos="fade-up">
-            <table>
-              <td><i class="far fa-newspaper"></i></td>
-              <td>
-                <a href="https://doi.org/10.1016/j.jcp.2020.109698">
-                  <div class="pub-title">
-                    Intrusive acceleration strategies for uncertainty quantification for hyperbolic systems of
-                    conservation laws.
-                  </div>
-                </a>
-                <div class="pub-journal">
-                  J.Kusch, J. Wolters, M. Frank<br>Journal of Computational Physics, 2020
-                </div>
-              </td>
-            </table>
-          </li>
-        </ul>
+      <div class="aboutme_right">
+        <h1><span style="color: #71a0c8">A</span>bout me.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, explicabo! Dolore iusto consequatur inventore velit eveniet, voluptate impedit adipisci, voluptatem rem alias tempora, aliquam ex! Iusto, pariatur perspiciatis. Magni, architecto magnam? Reiciendis aliquam blanditiis voluptate earum natus ipsum exercitationem ipsam vitae doloremque. Voluptates perferendis, minima rem ut delectus aperiam in dolores, quod iste, aspernatur harum fugiat numquam necessitatibus et. Amet impedit laudantium veritatis sed qui repellat saepe facere ducimus laboriosam id, eligendi illo neque iusto beatae, molestias dignissimos natus fugiat quas velit itaque dolore! Quaerat quod minus molestias nisi veniam vitae, optio pariatur voluptas repudiandae, quas in maiores, mollitia nulla!</p> 
       </div>
     </div>
-  </div>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      easing: 'ease-out',
-      duration: 500,
-      once: true
-    });
-  </script>
-</body>
+
+    <div class="timeline">
+      <div class="timeline_header">
+        <div class="timeline_header_left">
+          <h1><span style="color: #71a0c8">E</span>xperience.</h1>
+        </div>  
+        <div class="timeline_header_right">
+          <h1><span style="color: #71a0c8">E</span>ducation.</h1>
+        </div>  
+      </div>
+      <div class="timeline_item">
+        <h2>Since March 2017</h2>
+        <h1>Ph.D. in Mathematics</h1>
+        <p>Karlsruhe Institute of Technology (KIT)</p>
+        <p>Steinbuch Centre for Computing (SCC), CSMM Research group</p>
+        <p>Supervisor: Prof. Dr. Martin Frank</p>
+        <p>Thesis: "Uncertainty Quantification for the evaluation of PGNAA spectra"</p>
+      </div>
+      <div class="timeline_item alt">
+        <h2>03/2017 - 05/2021</h2>
+        <h1>Research Scientist</h1>
+        <p>Karlsruhe Institute of Technology (KIT)</p>
+        <p>Steinbuch Centre for Computing (SCC), CSMM Research group</p>        
+      </div>
+      <div class="timeline_item">
+        <h2>March 2017</h2>
+        <h1>Master of Computational Engineering Science</h1>
+        <p>RWTH Aachen University</p>
+        <p>Supervisor: Prof. Dr. Martin Frank</p>
+        <p>Thesis: "Uncertainty Quantification of Offshore Windfarms"</p>
+      </div>
+      <div class="timeline_item alt">
+        <h2>03/2017 - 05/2021</h2>
+        <h1>Research/Teching Student</h1>
+        <p>Karlsruhe Institute of Technology (KIT)</p>
+        <p>Steinbuch Centre for Computing (SCC), CSMM Research group</p>        
+      </div>      
+      <div class="timeline_item alt">
+        <h2>03/2017 - 05/2021</h2>
+        <h1>Research/Teching Student</h1>
+        <p>ABB Research Switzerland</p>
+        <p>Steinbuch Centre for Computing (SCC), CSMM Research group</p>        
+      </div>      
+      <div class="timeline_item">
+        <h2>Since March 2017</h2>
+        <h1>Bachelor of Computational Engineering Science</h1>
+        <p>Karlsruhe Institute of Technology (KIT)</p>
+        <p>Steinbuch Centre for Computing (SCC), CSMM Research group</p>
+        <p>Supervisor: Prof. Dr. Martin Frank</p>
+        <p>Thesis: "Uncertainty Quantification for the evaluation of PGNAA spectra"</p>
+      </div>
+    </div>
+    
+
+    <div class="skills">
+      <div class="skills_header">
+        <h1><span style="color: #71a0c8">S</span>kills.</h1>
+      </div>
+      <div class="skills_panel">
+        <div class="skills_nav">
+          <h3>Mathematics</h3>
+          <h3>Computer Science</h3>
+          <h3>Software Packages</h3>
+        </div>
+        <div class="skills_content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nemo fugiat neque tempora beatae? In nam maiores debitis quisquam! Sequi corporis fuga blanditiis illo? Ab, dolores. Minus reiciendis asperiores dolor praesentium accusantium qui consequatur voluptatem quae explicabo itaque inventore, rem laudantium officiis totam aut quos consectetur, vitae omnis quibusdam culpa sapiente nesciunt dolore magnam? Magni dicta placeat, voluptatem tempore earum aliquid amet vel consequuntur assumenda ipsum suscipit eveniet rerum omnis. Tenetur harum omnis quaerat, accusamus sit quam ratione dolorem, nesciunt debitis numquam aperiam aspernatur! Error quos suscipit et eos voluptatum expedita consequatur illo aperiam assumenda consequuntur quasi modi reprehenderit, sed, eaque atque aut, in repellat fugit laboriosam repudiandae. Nobis voluptatem tempora sequi est quo soluta adipisci porro dicta, nisi, voluptate fuga ut aliquid deleniti repellat perspiciatis sint eum tenetur molestias, animi quas repudiandae corporis asperiores! Vel quisquam fugit rem facere laudantium similique recusandae magni non, laboriosam perferendis labore quasi debitis quae eaque cum, quia, quam aliquid optio corrupti ipsam eos qui. Soluta architecto nihil et id placeat, eaque nostrum assumenda aut ipsum. Beatae eos numquam nobis? Nobis doloribus facere, accusantium officia repellendus modi velit cumque, possimus omnis aliquam obcaecati sit vitae, cum adipisci dolorum tempora magnam quidem magni ratione. Esse modi labore quae repellat vel. Quam, repellat assumenda beatae quo ad suscipit earum hic velit inventore provident atque mollitia iste, eveniet consectetur dolor voluptatem, cum rem voluptates quod voluptatibus. Corrupti quisquam ducimus magni architecto voluptatum esse eveniet voluptate natus vero vel in maiores at animi numquam inventore quo ratione ab velit cupiditate sit, ullam debitis delectus. Eos vitae consectetur quo. Ipsam laboriosam excepturi beatae saepe vitae dolorum sit suscipit unde voluptate qui, consequuntur magnam facere. Exercitationem, tempore tenetur dignissimos asperiores suscipit reiciendis odit, deleniti harum ratione minima, fuga vero nemo doloremque? Dignissimos dolore consequuntur perspiciatis rerum voluptatibus excepturi totam numquam.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="projects">
+      <div class="projects_header">
+        <h1><span style="color: #71a0c8">P</span>rojects.</h1>      
+        <div class="card">
+          <div class="wrapper" style="background: url(img/uqcreator.png);">
+            <div class="data">
+              <div class="content">
+                <h1 class="title">Project Card <a href="https://www.google.com"><i class="fab fa-github"></i></a></h1>
+                <p class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.""</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="wrapper" style="background: url(img/uqcreator.png);">
+          <div class="data">
+            <div class="content">
+              <h1 class="title">Project Card <a href="https://www.google.com"><i class="fab fa-github"></i></a></h1>
+              <p class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.""</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card alt">
+        <div class="wrapper" style="background: url(img/uqcreator.png);">
+          <div class="data">
+            <div class="content">
+              <h1 class="title">Project Card <a href="https://www.google.com"><i class="fab fa-github"></i></a></h1>
+              <p class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.""</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="card">
+        <div class="wrapper" style="background: url(img/uqcreator.png);">
+          <div class="data">
+            <div class="content">
+              <h1 class="title">Project Card <a href="https://www.google.com"><i class="fab fa-github"></i></a></h1>
+              <p class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.""</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="footer">
+      <h1><span style="color: #71a0c8">C</span>ontact.</h1> 
+      <p>If any of this raised your interest, feel free to contact me directly by mail or through social media.</p>
+      <p></p>
+      <p>A PDF version of my CV is also available for download.</p>
+      <h3>Enjoy your day!</h3>
+    </div>
+    
+    <script src="js/website.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-out",
+        duration: 500,
+        once: true,
+      });
+    </script>
+  </body>
 </html>
