@@ -214,51 +214,53 @@ async function runSimulation(canvas, gl) {
     dt = Math.min((t - tOld) / 1000, 1 / 60);
     tOld = t;
 
-    gl.disable(gl.BLEND);
+    if (canvasVisible) {
+      gl.disable(gl.BLEND);
 
-    addForce();
+      addForce();
 
-    // divergence
-    gl.useProgram(divergenceProgram);
-    gl.uniform2fv(divergenceParams.dx, [dx, dy]);
-    gl.uniform1i(divergenceParams.u, u.old.activate(0));
-    execProgram(div.framebuffer);
+      // divergence
+      gl.useProgram(divergenceProgram);
+      gl.uniform2fv(divergenceParams.dx, [dx, dy]);
+      gl.uniform1i(divergenceParams.u, u.old.activate(0));
+      execProgram(div.framebuffer);
 
-    // pressure
-    gl.useProgram(pressureProgram);
-    gl.uniform2fv(pressureParams.dx, [dx, dy]);
-    gl.uniform1i(pressureParams.div, div.activate(0));
-    for (let i = 0; i < 50; i++) {
-      gl.uniform1i(pressureParams.u, p.old.activate(1));
-      execProgram(p.new.framebuffer);
-      p.swapMem();
+      // pressure
+      gl.useProgram(pressureProgram);
+      gl.uniform2fv(pressureParams.dx, [dx, dy]);
+      gl.uniform1i(pressureParams.div, div.activate(0));
+      for (let i = 0; i < 50; i++) {
+        gl.uniform1i(pressureParams.u, p.old.activate(1));
+        execProgram(p.new.framebuffer);
+        p.swapMem();
+      }
+
+      // pressure correction step
+      gl.useProgram(gradientCorrectionProgram);
+      gl.uniform2fv(gradientCorrectionParams.dx, [dx, dy]);
+      gl.uniform1i(gradientCorrectionParams.p, p.old.activate(0));
+      gl.uniform1i(gradientCorrectionParams.u, u.old.activate(1));
+      execProgram(u.new.framebuffer);
+      u.swapMem();
+
+      // advection
+      gl.useProgram(advectionProgram);
+      gl.uniform2f(advectionParams.dx, dx, dy);
+      gl.uniform1i(advectionParams.u, u.old.activate(0));
+      gl.uniform1f(advectionParams.dt, dt);
+      gl.uniform1f(advectionParams.ux, ux);
+      gl.uniform1f(advectionParams.aspectRatio, canvas.width / canvas.height);
+      gl.uniform1i(advectionParams.karman, false);
+      execProgram(u.new.framebuffer);
+      u.swapMem();
+
+      // render to canvas
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.enable(gl.BLEND);
+      gl.useProgram(outputProgram);
+      gl.uniform1i(outputParams.plot, u.old.activate(0));
+      execProgram(null);
     }
-
-    // pressure correction step
-    gl.useProgram(gradientCorrectionProgram);
-    gl.uniform2fv(gradientCorrectionParams.dx, [dx, dy]);
-    gl.uniform1i(gradientCorrectionParams.p, p.old.activate(0));
-    gl.uniform1i(gradientCorrectionParams.u, u.old.activate(1));
-    execProgram(u.new.framebuffer);
-    u.swapMem();
-
-    // advection
-    gl.useProgram(advectionProgram);
-    gl.uniform2f(advectionParams.dx, dx, dy);
-    gl.uniform1i(advectionParams.u, u.old.activate(0));
-    gl.uniform1f(advectionParams.dt, dt);
-    gl.uniform1f(advectionParams.ux, ux);
-    gl.uniform1f(advectionParams.aspectRatio, canvas.width / canvas.height);
-    gl.uniform1i(advectionParams.karman, false);
-    execProgram(u.new.framebuffer);
-    u.swapMem();
-
-    // render to canvas
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.enable(gl.BLEND);
-    gl.useProgram(outputProgram);
-    gl.uniform1i(outputParams.plot, u.old.activate(0));
-    execProgram(null);
 
     requestAnimationFrame(simulate);
   }
@@ -450,12 +452,14 @@ async function runAnimation(canvas, gl) {
     dt = Math.min((t - tOld) / 1000, 1 / 60);
     tOld = t;
 
-    // render to canvas
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.enable(gl.BLEND);
-    gl.useProgram(ellipticCurveProgram);
-    gl.uniform1f(ellipticCurveParams.t, (t - t0) / 1000);
-    execProgram(null);
+    if (canvasVisible) {
+      // render to canvas
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.enable(gl.BLEND);
+      gl.useProgram(ellipticCurveProgram);
+      gl.uniform1f(ellipticCurveParams.t, (t - t0) / 1000);
+      execProgram(null);
+    }
 
     requestAnimationFrame(simulate);
   }
@@ -474,6 +478,14 @@ async function runAnimation(canvas, gl) {
 }
 
 const canvas = document.getElementsByTagName("canvas")[0];
+
+var canvasVisible = true;
+
+window.addEventListener("scroll", () => {
+  let scrollPosition = document.documentElement.scrollTop;
+  if (scrollPosition > canvas.height) canvasVisible = false;
+  else canvasVisible = true;
+});
 
 const params = {
   alpha: true,
