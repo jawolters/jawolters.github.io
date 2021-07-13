@@ -214,51 +214,53 @@ async function runSimulation(canvas, gl) {
     dt = Math.min((t - tOld) / 1000, 1 / 60);
     tOld = t;
 
-    gl.disable(gl.BLEND);
+    if (canvasVisible) {
+      gl.disable(gl.BLEND);
 
-    addForce();
+      addForce();
 
-    // divergence
-    gl.useProgram(divergenceProgram);
-    gl.uniform2fv(divergenceParams.dx, [dx, dy]);
-    gl.uniform1i(divergenceParams.u, u.old.activate(0));
-    execProgram(div.framebuffer);
+      // divergence
+      gl.useProgram(divergenceProgram);
+      gl.uniform2fv(divergenceParams.dx, [dx, dy]);
+      gl.uniform1i(divergenceParams.u, u.old.activate(0));
+      execProgram(div.framebuffer);
 
-    // pressure
-    gl.useProgram(pressureProgram);
-    gl.uniform2fv(pressureParams.dx, [dx, dy]);
-    gl.uniform1i(pressureParams.div, div.activate(0));
-    for (let i = 0; i < 50; i++) {
-      gl.uniform1i(pressureParams.u, p.old.activate(1));
-      execProgram(p.new.framebuffer);
-      p.swapMem();
+      // pressure
+      gl.useProgram(pressureProgram);
+      gl.uniform2fv(pressureParams.dx, [dx, dy]);
+      gl.uniform1i(pressureParams.div, div.activate(0));
+      for (let i = 0; i < 50; i++) {
+        gl.uniform1i(pressureParams.u, p.old.activate(1));
+        execProgram(p.new.framebuffer);
+        p.swapMem();
+      }
+
+      // pressure correction step
+      gl.useProgram(gradientCorrectionProgram);
+      gl.uniform2fv(gradientCorrectionParams.dx, [dx, dy]);
+      gl.uniform1i(gradientCorrectionParams.p, p.old.activate(0));
+      gl.uniform1i(gradientCorrectionParams.u, u.old.activate(1));
+      execProgram(u.new.framebuffer);
+      u.swapMem();
+
+      // advection
+      gl.useProgram(advectionProgram);
+      gl.uniform2f(advectionParams.dx, dx, dy);
+      gl.uniform1i(advectionParams.u, u.old.activate(0));
+      gl.uniform1f(advectionParams.dt, dt);
+      gl.uniform1f(advectionParams.ux, ux);
+      gl.uniform1f(advectionParams.aspectRatio, canvas.width / canvas.height);
+      gl.uniform1i(advectionParams.karman, false);
+      execProgram(u.new.framebuffer);
+      u.swapMem();
+
+      // render to canvas
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.enable(gl.BLEND);
+      gl.useProgram(outputProgram);
+      gl.uniform1i(outputParams.plot, u.old.activate(0));
+      execProgram(null);
     }
-
-    // pressure correction step
-    gl.useProgram(gradientCorrectionProgram);
-    gl.uniform2fv(gradientCorrectionParams.dx, [dx, dy]);
-    gl.uniform1i(gradientCorrectionParams.p, p.old.activate(0));
-    gl.uniform1i(gradientCorrectionParams.u, u.old.activate(1));
-    execProgram(u.new.framebuffer);
-    u.swapMem();
-
-    // advection
-    gl.useProgram(advectionProgram);
-    gl.uniform2f(advectionParams.dx, dx, dy);
-    gl.uniform1i(advectionParams.u, u.old.activate(0));
-    gl.uniform1f(advectionParams.dt, dt);
-    gl.uniform1f(advectionParams.ux, ux);
-    gl.uniform1f(advectionParams.aspectRatio, canvas.width / canvas.height);
-    gl.uniform1i(advectionParams.karman, true);
-    execProgram(u.new.framebuffer);
-    u.swapMem();
-
-    // render to canvas
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.enable(gl.BLEND);
-    gl.useProgram(outputProgram);
-    gl.uniform1i(outputParams.plot, u.old.activate(0));
-    execProgram(null);
 
     requestAnimationFrame(simulate);
   }
@@ -350,7 +352,140 @@ async function runSimulation(canvas, gl) {
   }
 }
 
+async function runAnimation(canvas, gl) {
+  resizeCanvas();
+
+  let width = canvas.clientWidth;
+  let height = canvas.clientHeight;
+
+  let dx = 1.0 / width;
+  let dy = 1.0 / height;
+
+  gl.getExtension("EXT_color_buffer_float");
+  gl.getExtension("OES_texture_float_linear");
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+  function createProgram(vertexShader, fragmentShader) {
+    var program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    var success = gl.getProgramParameter(program, gl.LINK_STATUS);
+    if (success) {
+      return program;
+    } else {
+      console.trace(gl.getProgramInfoLog(program));
+      gl.deleteProgram(program);
+      return undefined;
+    }
+  }
+
+  function getUniforms(program) {
+    let uniforms = [];
+    let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
+    for (let i = 0; i < uniformCount; i++) {
+      let uniformName = gl.getActiveUniform(program, i).name;
+      uniforms[uniformName] = gl.getUniformLocation(program, uniformName);
+    }
+    return uniforms;
+  }
+
+  function execProgram(target) {
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, -1, 1, 1, 1, 1, -1]),
+      gl.STATIC_DRAW
+    );
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(
+      gl.ELEMENT_ARRAY_BUFFER,
+      new Uint16Array([0, 1, 2, 0, 2, 3]),
+      gl.STATIC_DRAW
+    );
+    gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(0);
+    gl.viewport(0, 0, width, height);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, target);
+    gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
+  }
+
+  function compileShader(type, source) {
+    var shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    var success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
+    if (success) {
+      return shader;
+    } else {
+      gl.deleteShader(shader);
+      console.error("shader compile failed: " + source);
+      return undefined;
+    }
+  }
+
+  function loadShaderFromFile(url) {
+    return fetch(url).then((response) => response.text());
+  }
+
+  const shaderFiles = ["shaders/stencil.vert", "shaders/elliptic_curve.frag"];
+  const shader = await Promise.all(shaderFiles.map(loadShaderFromFile));
+
+  var stencilShader = compileShader(gl.VERTEX_SHADER, shader[0]);
+  var ellipticCurveShader = compileShader(gl.FRAGMENT_SHADER, shader[1]);
+
+  const ellipticCurveProgram = createProgram(
+    stencilShader,
+    ellipticCurveShader
+  );
+  const ellipticCurveParams = getUniforms(ellipticCurveProgram);
+
+  let tOld = Date.now();
+  const t0 = tOld;
+  let t;
+  let dt;
+
+  simulate();
+
+  function simulate() {
+    t = Date.now();
+    dt = Math.min((t - tOld) / 1000, 1 / 60);
+    tOld = t;
+
+    if (canvasVisible) {
+      // render to canvas
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.enable(gl.BLEND);
+      gl.useProgram(ellipticCurveProgram);
+      gl.uniform1f(ellipticCurveParams.t, (t - t0) / 1000);
+      execProgram(null);
+    }
+
+    requestAnimationFrame(simulate);
+  }
+
+  function resizeCanvas(multiplier) {
+    multiplier = multiplier || 1;
+    const width = (canvas.clientWidth * multiplier) | 0;
+    const height = (canvas.clientHeight * multiplier) | 0;
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      return true;
+    }
+    return false;
+  }
+}
+
 const canvas = document.getElementsByTagName("canvas")[0];
+
+var canvasVisible = true;
+
+window.addEventListener("scroll", () => {
+  let scrollPosition = document.documentElement.scrollTop;
+  if (scrollPosition > canvas.height) canvasVisible = false;
+  else canvasVisible = true;
+});
 
 const params = {
   alpha: true,
@@ -361,25 +496,15 @@ const params = {
 };
 let gl = canvas.getContext("webgl2", params);
 
-if (!gl) {
-  var elem = document.createElement("div");
-  elem.id = "nowebgl2";
-  elem.innerHTML =
-    "<h2>This simulation requires WebGL2, which is not supported by your current browser! A list of compatible alternatives can be found <a href='https://caniuse.com/webgl2' style='color:#fff;'>here</a>.</h2>";
-  elem.style.display = "flex";
-  elem.style.justifyContent = "center";
-  elem.style.textAlign = "center";
-  elem.style.alignItems = "center";
-  elem.style.height = "99.5vh";
-  elem.style.marginLeft = "20%";
-  elem.style.marginRight = "20%";
-  document.querySelector("body").replaceChild(elem, canvas);
+if (gl) {
+  if (window.matchMedia("screen and (min-width: 1000px)").matches) {
+    runSimulation(canvas, gl);
+  } else {
+    runAnimation(canvas, gl);
+  }
 } else {
-  canvas.style.width = "100vw";
-  canvas.style.height = "100vh";
-  canvas.style.maxWidth = "100%";
-  canvas.style.backgroundColor = "#222222";
-  document.body.style.margin = "0px";
-  document.body.style.height = "100vh";
-  runSimulation(canvas, gl);
+  canvas.style.background = 'url("img/Lorenz.svg")';
+  canvas.style.backgroundPosition = "center";
+  canvas.style.backgroundSize = "90% auto";
+  canvas.style.backgroundRepeat = "no-repeat";
 }
