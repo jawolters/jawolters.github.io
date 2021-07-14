@@ -70,7 +70,7 @@ canvas {
   top: 95vh;
   fill: #fff;
   opacity: 0;
-  animation: fadeInDown05 2s ease-out 8s forwards;
+  animation: fadeInDown05 5s ease-out 8s forwards;
 }
 .landing .landing_arrow svg {
   height: 40px;
@@ -571,9 +571,17 @@ canvas {
     opacity: 0;
     transform: translateY(-20px);
   }
-  100% {
+  20% {
     opacity: 0.7;
     transform: translateY(0);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }
 @keyframes fadeOutDown05 {

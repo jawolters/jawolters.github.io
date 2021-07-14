@@ -70,7 +70,9 @@ async function runSimulation(canvas, gl) {
     );
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(0);
-    gl.viewport(0, 0, width, height);
+    if (target == null)
+      gl.viewport(0, 0, canvas.clientWidth, canvas.clientHeight);
+    else gl.viewport(0, 0, width, height);
     gl.bindFramebuffer(gl.FRAMEBUFFER, target);
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
   }
@@ -101,6 +103,7 @@ async function runSimulation(canvas, gl) {
     "shaders/pressure.frag",
     "shaders/output.frag",
     "shaders/ext_force.frag",
+    "shaders/copy.frag",
   ];
   const shader = await Promise.all(shaderFiles.map(loadShaderFromFile));
 
@@ -111,8 +114,11 @@ async function runSimulation(canvas, gl) {
   var pressureShader = compileShader(gl.FRAGMENT_SHADER, shader[4]);
   var outputShader = compileShader(gl.FRAGMENT_SHADER, shader[5]);
   var extForceShader = compileShader(gl.FRAGMENT_SHADER, shader[6]);
+  var copyShader = compileShader(gl.FRAGMENT_SHADER, shader[7]);
 
   const forceProgram = createProgram(stencilShader, extForceShader);
+  const copyProgram = createProgram(stencilShader, copyShader);
+  const outputProgram = createProgram(stencilShader, outputShader);
   const advectionProgram = createProgram(stencilShader, advectionShader);
   const divergenceProgram = createProgram(stencilShader, divergenceShader);
   const pressureProgram = createProgram(stencilShader, pressureShader);
@@ -120,14 +126,14 @@ async function runSimulation(canvas, gl) {
     stencilShader,
     gradientCorrShader
   );
-  const outputProgram = createProgram(stencilShader, outputShader);
 
   const forceParams = getUniforms(forceProgram);
+  const copyParams = getUniforms(copyProgram);
+  const outputParams = getUniforms(outputProgram);
   const advectionParams = getUniforms(advectionProgram);
   const divergenceParams = getUniforms(divergenceProgram);
   const gradientCorrectionParams = getUniforms(gradientCorrectionProgram);
   const pressureParams = getUniforms(pressureProgram);
-  const outputParams = getUniforms(outputProgram);
 
   function createFramebuffer(init) {
     gl.activeTexture(gl.TEXTURE0);
@@ -180,8 +186,14 @@ async function runSimulation(canvas, gl) {
       get old() {
         return fb_old;
       },
+      set old(value) {
+        fb_old = value;
+      },
       get new() {
         return fb_new;
+      },
+      set new(value) {
+        fb_new = value;
       },
       swapMem() {
         let temp = fb_old;
@@ -205,12 +217,24 @@ async function runSimulation(canvas, gl) {
   let t;
   let dt;
 
+  var fps_hist = [];
+  const average = (arr) => arr.reduce((p, c) => p + c, 0) / arr.length;
+
   await sleep(500);
 
   simulate();
 
   function simulate() {
     t = Date.now();
+    if (fps_hist.length >= 15) {
+      fps_hist.shift();
+      const fps_avg = average(fps_hist);
+      if (fps_avg < 30) {
+        downscaleFramebuffer();
+        fps_hist = [];
+      }
+    }
+    fps_hist.push(1.0 / ((t - tOld) / 1000.0));
     dt = Math.min((t - tOld) / 1000, 1 / 60);
     tOld = t;
 
@@ -349,6 +373,38 @@ async function runSimulation(canvas, gl) {
   function scaleByPixelRatio(input) {
     let pixelRatio = window.devicePixelRatio || 1;
     return Math.floor(input * pixelRatio);
+  }
+
+  function resizeFramebuffer(target) {
+    let newFB = createFramebuffer();
+    gl.useProgram(copyProgram);
+    gl.uniform1i(copyParams.toCopy, target.activate(0));
+    execProgram(newFB.framebuffer);
+    return newFB;
+  }
+
+  function resizeFramebufferPair(target) {
+    target.old = resizeFramebuffer(target.old);
+    target.new = createFramebuffer();
+    return target;
+  }
+
+  function downscaleFramebuffer() {
+    const aspectRatio = canvas.width / canvas.height;
+    const width_lb = 1000;
+    const height_lb = Math.round(1000/aspectRatio);
+    if(width == width_lb && height == height_lb) return;
+    width = Math.max(width_lb, Math.round(width / (4 / 3)));
+    height = Math.max(height_lb, Math.round(height / (4 / 3)));
+    console.log(
+      "[Low FPS warning]: downscaling simulation resolution to " +
+        width +
+        "x" +
+        height
+    );
+    u = resizeFramebufferPair(u);
+    div = resizeFramebuffer(div);
+    p = resizeFramebufferPair(p);
   }
 }
 
