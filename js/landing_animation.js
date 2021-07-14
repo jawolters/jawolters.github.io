@@ -205,7 +205,7 @@ async function runSimulation(canvas, gl) {
   let t;
   let dt;
 
-  await sleep(1000);
+  await sleep(500);
 
   simulate();
 
