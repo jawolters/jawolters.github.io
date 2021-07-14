@@ -391,7 +391,7 @@ async function runSimulation(canvas, gl) {
 
   function downscaleFramebuffer() {
     const aspectRatio = canvas.width / canvas.height;
-    const width_lb = 1000;
+    const width_lb = 800;
     const height_lb = Math.round(1000/aspectRatio);
     if(width == width_lb && height == height_lb) return;
     width = Math.max(width_lb, Math.round(width / (4 / 3)));
