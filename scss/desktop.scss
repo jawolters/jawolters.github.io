@@ -82,7 +82,8 @@ canvas {
 
   .landing_arrow {
     position: absolute;
-    top: 95vh;
+    top: 90vh;
+    bottom: 5vh;
     fill: #fff;
     opacity: 0;
     animation: fadeInDown05 5s ease-out 8s forwards;
@@ -109,6 +110,8 @@ canvas {
     .portrait {
       height: 25vh;
       width: 25vh;
+      min-width: 300px;
+      min-height: 300px;
       border-radius: 100%;
       align-self: center;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -350,6 +353,7 @@ canvas {
               margin-top: 3px;
               float: right;
               width: 15%;
+              min-width: 40px;
               content-visibility: auto;
 
               &::after {
@@ -466,7 +470,7 @@ canvas {
       position: absolute;
       bottom: 0;
       width: 100%;
-      transform: translateY(calc(100% - 20px - 35px - 40px - 20px));
+      transform: translateY(calc(100% - 20px - 30px - 40px - 20px));
       transition: transform 0.3s;
 
       .content {
@@ -488,7 +492,7 @@ canvas {
       margin-top: -10px;
 
       font-family: "Raleway", sans-serif;
-      font-size: 35px;
+      font-size: 30px;
 
       a {
         color: white;
@@ -505,6 +509,7 @@ canvas {
 
     .topic {
       margin-top: 20px;
+      font-size: 17px;
       &::before {
         content: "Topics: ";
         font-weight: 800;
@@ -514,6 +519,7 @@ canvas {
 
     .tech {
       margin-top: 0px;
+      font-size: 17px;
       &::before {
         content: "Technologies: ";
         font-weight: 800;
@@ -523,6 +529,7 @@ canvas {
 
     .text {
       margin: 0;
+      font-size: 17px;
     }
 
     input[type="checkbox"] {
@@ -560,6 +567,7 @@ canvas {
       padding: 10px 10px 10px 100px;
       background-color: #fff;
       margin: 25px 0;
+      font-size: 18px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
