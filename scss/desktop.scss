@@ -123,17 +123,16 @@ canvas {
       justify-content: center;
       margin-left: 25%;
       margin-right: 25%;
-      margin-top: 20px;
-      font-size: 1.5vh;
+      margin-top: 20px;      
 
       a {
         color: $color_primary;
         padding: 0.5em;
-        font-size: 1.5vh;
+        font-size: max(20px, 1.5vh);
         opacity: 0;
 
         &.active {
-          animation: fadeInDown 0.5s ease-out 0s forwards;
+          animation: fadeInDown 0.5s ease-out 0.25s forwards;
 
           :hover {
             transform: scale(1.2);

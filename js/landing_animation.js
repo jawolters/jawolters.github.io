@@ -220,7 +220,7 @@ async function runSimulation(canvas, gl) {
   var fps_hist = [];
   const average = (arr) => arr.reduce((p, c) => p + c, 0) / arr.length;
 
-  await sleep(500);
+  await sleep(1500);
 
   simulate();
 
