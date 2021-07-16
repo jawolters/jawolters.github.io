@@ -366,7 +366,7 @@ canvas {
 }
 .projects .projects_header > h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 2.5rem;
+  font-size: 32px;
   display: flex;
   justify-content: center;
   margin-top: 250px;
@@ -465,6 +465,7 @@ canvas {
 }
 .publications .publications_header h1 {
   font-family: "Raleway", sans-serif;
+  font-size: 32px;
 }
 .publications .publications_content .publication {
   width: 80vw;
