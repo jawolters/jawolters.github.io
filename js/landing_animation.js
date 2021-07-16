@@ -392,8 +392,8 @@ async function runSimulation(canvas, gl) {
   function downscaleFramebuffer() {
     const aspectRatio = canvas.width / canvas.height;
     const width_lb = 400;
-    const height_lb = Math.round(1000/aspectRatio);
-    if(width == width_lb && height == height_lb) return;
+    const height_lb = Math.round(1000 / aspectRatio);
+    if (width == width_lb && height == height_lb) return;
     width = Math.max(width_lb, Math.round(width / (4 / 3)));
     height = Math.max(height_lb, Math.round(height / (4 / 3)));
     console.log(
@@ -563,5 +563,6 @@ if (gl) {
   canvas.style.backgroundPosition = "center";
   canvas.style.backgroundSize = "90% auto";
   canvas.style.backgroundRepeat = "no-repeat";
-  canvas.style.zIndex = "-1";
+  canvas.style.opacity = "0.5";
+  canvas.style.zIndex = "0";
 }

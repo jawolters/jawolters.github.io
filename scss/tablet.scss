@@ -52,9 +52,9 @@ canvas {
   position: absolute;
 
   .landing_content {
-    width: 40vw;
-    max-width: 1000px;
+    width: calc(100vw+4px);
     height: 30vh;
+    left: -2px;
     align-self: center;
     align-items: flex-end;
     display: flex;
@@ -62,17 +62,17 @@ canvas {
     justify-content: center;
     //border: #fff solid 2px;
     //background-color: #444;
-    padding: 0 20px;
+    padding: 0 5vw;
 
     h1 {
-      font-size: 4.5vw;
+      font-size: 4.8vw;
       opacity: 0;
       animation: fadeInDown 1s ease-out 0.25s forwards;
       font-family: "Megrim";
     }
 
     h2 {
-      font-size: 2.2vw;
+      font-size: 2.4vw;
       opacity: 0;
       animation: fadeInDown 1s ease-out 1.5s forwards;
       color: #fff;
@@ -83,12 +83,11 @@ canvas {
   .landing_arrow {
     position: absolute;
     top: 90vh;
-    bottom: 5vh;
     fill: #fff;
     opacity: 0;
-    animation: fadeInDown05 5s ease-out 8s forwards;
+    animation: fadeInDown05 5s ease-out 5s forwards;
     svg {
-      height: 40px;
+      height: 3vh;
     }
     &.vanish {
       animation: fadeOutDown05 1s ease-out 0s forwards;
@@ -123,7 +122,7 @@ canvas {
       justify-content: center;
       margin-left: 25%;
       margin-right: 25%;
-      margin-top: 20px;      
+      margin-top: 20px;
 
       a {
         color: $color_primary;
@@ -150,7 +149,7 @@ canvas {
 
     h1 {
       font-family: "Raleway", sans-serif;
-      font-size: 2.5rem;
+      font-size: 32px;
       margin-bottom: 1rem;
     }
   }
@@ -183,7 +182,7 @@ canvas {
 
     h1 {
       font-family: "Raleway", sans-serif;
-      font-size: 2.5rem;
+      font-size: 32px;
     }
 
     .timeline_header_left {
@@ -257,7 +256,7 @@ canvas {
     display: flex;
     justify-content: center;
     font-family: "Raleway", sans-serif;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 50px 0;    
   }
 
   .skills_panel {
@@ -316,11 +315,11 @@ canvas {
           font-size: 20px;
 
           .section {
-            width: 28%;
+            width: 30%;
 
             h3 {
               padding: 10px 0;
-              font-size: 22px;
+              font-size: 20px;
             }
 
             a {
@@ -330,7 +329,7 @@ canvas {
 
             ul {
               list-style-position: inside;
-              font-size: 14px;
+              font-size: min(18px, 1.6vw);
               li {
                 padding: 5px 10px;
 
@@ -351,7 +350,7 @@ canvas {
               padding: 3px;
               float: right;
               width: 15%;
-              min-width: 35px;
+              min-width: 32px;
               content-visibility: auto;
 
               &::after {

@@ -317,8 +317,8 @@ canvas {
           font-size: 20px;
 
           .section {
-            width: 100%;
-            padding-bottom: 20px;
+            width: 80%;
+            padding: 20px 0% 20px 20%;
 
             h3 {
               font-size: 22px;
@@ -330,8 +330,8 @@ canvas {
             }
 
             ul {
-              list-style-position: inside;
-              font-size: 20px;
+              list-style-position: inside;              
+              font-size: min(20px, 3vw);
               li {
                 padding: 5px 10px;
 
@@ -353,6 +353,7 @@ canvas {
               margin-top: 3px;
               float: right;
               width: 15%;
+              min-width: 35px;
               content-visibility: auto;
 
               &::after {

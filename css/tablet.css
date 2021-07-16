@@ -42,24 +42,24 @@ canvas {
   position: absolute;
 }
 .landing .landing_content {
-  width: 40vw;
-  max-width: 1000px;
+  width: calc(100vw+4px);
   height: 30vh;
+  left: -2px;
   align-self: center;
   align-items: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 5vw;
 }
 .landing .landing_content h1 {
-  font-size: 4.5vw;
+  font-size: 4.8vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 0.25s forwards;
   font-family: "Megrim";
 }
 .landing .landing_content h2 {
-  font-size: 2.2vw;
+  font-size: 2.4vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 1.5s forwards;
   color: #fff;
@@ -68,13 +68,12 @@ canvas {
 .landing .landing_arrow {
   position: absolute;
   top: 90vh;
-  bottom: 5vh;
   fill: #fff;
   opacity: 0;
-  animation: fadeInDown05 5s ease-out 8s forwards;
+  animation: fadeInDown05 5s ease-out 5s forwards;
 }
 .landing .landing_arrow svg {
-  height: 40px;
+  height: 3vh;
 }
 .landing .landing_arrow.vanish {
   animation: fadeOutDown05 1s ease-out 0s forwards;
@@ -127,7 +126,7 @@ canvas {
 }
 .aboutme .aboutme_right h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 2.5rem;
+  font-size: 32px;
   margin-bottom: 1rem;
 }
 
@@ -153,7 +152,7 @@ canvas {
 }
 .timeline .timeline_header h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 2.5rem;
+  font-size: 32px;
 }
 .timeline .timeline_header .timeline_header_left {
   display: flex;
@@ -269,11 +268,11 @@ canvas {
   font-size: 20px;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section {
-  width: 28%;
+  width: 30%;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section h3 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section a {
   color: #fff;
@@ -281,7 +280,7 @@ canvas {
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section ul {
   list-style-position: inside;
-  font-size: 14px;
+  font-size: min(18px, 1.6vw);
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section ul li {
   padding: 5px 10px;
@@ -300,7 +299,7 @@ canvas {
   padding: 3px;
   float: right;
   width: 15%;
-  min-width: 35px;
+  min-width: 32px;
   content-visibility: auto;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section .rating::after {

@@ -272,8 +272,8 @@ canvas {
   font-size: 20px;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section {
-  width: 100%;
-  padding-bottom: 20px;
+  width: 80%;
+  padding: 20px 0% 20px 20%;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section h3 {
   font-size: 22px;
@@ -284,7 +284,7 @@ canvas {
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section ul {
   list-style-position: inside;
-  font-size: 20px;
+  font-size: min(20px, 3vw);
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section ul li {
   padding: 5px 10px;
@@ -304,6 +304,7 @@ canvas {
   margin-top: 3px;
   float: right;
   width: 15%;
+  min-width: 35px;
   content-visibility: auto;
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section .rating::after {
