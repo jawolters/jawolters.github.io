@@ -553,7 +553,7 @@ const params = {
 let gl = canvas.getContext("webgl2", params);
 
 if (gl) {
-  if (window.matchMedia("screen and (min-width: 1000px)").matches) {
+  if (window.matchMedia("screen and (min-width: 700px)").matches) {
     runSimulation(canvas, gl);
   } else {
     runAnimation(canvas, gl);
@@ -563,4 +563,5 @@ if (gl) {
   canvas.style.backgroundPosition = "center";
   canvas.style.backgroundSize = "90% auto";
   canvas.style.backgroundRepeat = "no-repeat";
+  canvas.style.zIndex = "-1";
 }
