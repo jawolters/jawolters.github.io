@@ -53,29 +53,17 @@ canvas {
 }
 .landing .landing_content h1 {
   font-size: 5vh;
-  opacity: 0;
-  animation: fadeInDown 1s ease-out 0.25s forwards;
   font-family: "Megrim";
 }
 .landing .landing_content h2 {
   font-size: 2.5vh;
   opacity: 0;
-  animation: fadeInDown 1s ease-out 1.5s forwards;
+  animation: fadeInDown 1s ease-out 0.5s forwards;
   color: #fff;
   font-family: "Raleway", sans-serif;
 }
 .landing .landing_arrow {
-  position: absolute;
-  top: 90vh;
-  fill: #fff;
-  opacity: 0;
-  animation: fadeInDown05 5s ease-out 5s forwards;
-}
-.landing .landing_arrow svg {
-  height: 3vh;
-}
-.landing .landing_arrow.vanish {
-  animation: fadeOutDown05 1s ease-out 0s forwards;
+  display: none;
 }
 
 .aboutme {
@@ -91,6 +79,7 @@ canvas {
   justify-content: center;
   flex-direction: column;
   width: 100vw;
+  max-width: 100%;
   margin: 20% 0 5% 0;
 }
 .aboutme .aboutme_left .portrait {
@@ -106,12 +95,11 @@ canvas {
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 20px;
-  font-size: 2.5vh;
 }
 .aboutme .aboutme_left .icons a {
   color: #555;
   padding: 0.5em;
-  font-size: 2.5vh;
+  font-size: 18px;
   opacity: 0;
 }
 .aboutme .aboutme_left .icons a.active {
@@ -236,13 +224,14 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.skills .skills_panel .skills_nav h3 {
+.skills .skills_panel .skills_nav h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway", sans-serif;
   width: 100%;
   height: 60px;
+  font-size: 22px;
   text-align: center;
 }
 .skills .skills_panel .skills_nav .active {

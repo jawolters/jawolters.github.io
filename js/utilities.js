@@ -1,4 +1,6 @@
-var nodes = Array.from(document.getElementsByTagName("h1"));
+var nodes = Array.from(
+  document.getElementsByClassName("timeline")[0].getElementsByTagName("h1")
+);
 Array.from(document.getElementsByClassName("wrapper")).forEach((elem) =>
   nodes.push(elem)
 );

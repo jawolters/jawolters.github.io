@@ -65,32 +65,20 @@ canvas {
 
     h1 {
       font-size: 5vh;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out 0.25s forwards;
       font-family: "Megrim";
     }
 
     h2 {
       font-size: 2.5vh;
       opacity: 0;
-      animation: fadeInDown 1s ease-out 1.5s forwards;
+      animation: fadeInDown 1s ease-out 0.5s forwards;
       color: #fff;
       font-family: "Raleway", sans-serif;
     }
   }
 
   .landing_arrow {
-    position: absolute;
-    top: 90vh;
-    fill: #fff;
-    opacity: 0;
-    animation: fadeInDown05 5s ease-out 5s forwards;
-    svg {
-      height: 3vh;
-    }
-    &.vanish {
-      animation: fadeOutDown05 1s ease-out 0s forwards;
-    }
+    display: none;
   }
 }
 
@@ -107,6 +95,7 @@ canvas {
     justify-content: center;
     flex-direction: column;
     width: 100vw;
+    max-width: 100%;
     margin: 20% 0 5% 0;
 
     .portrait {
@@ -124,12 +113,11 @@ canvas {
       margin-left: 25%;
       margin-right: 25%;
       margin-top: 20px;
-      font-size: 2.5vh;
 
       a {
         color: $color_primary;
         padding: 0.5em;
-        font-size: 2.5vh;
+        font-size: 18px;
         opacity: 0;
 
         &.active {
@@ -278,13 +266,14 @@ canvas {
       flex-direction: column;
       justify-content: space-evenly;
 
-      h3 {
+      h2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         font-family: "Raleway", sans-serif;
         width: 100%;
         height: 60px;
+        font-size: 22px;
         text-align: center;
       }
 
@@ -330,7 +319,7 @@ canvas {
             }
 
             ul {
-              list-style-position: inside;              
+              list-style-position: inside;
               font-size: min(18px, 4vw);
               li {
                 padding: 10px 10px 0px 0px;
@@ -424,7 +413,7 @@ canvas {
 
   .projects_header {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 
     & > h1 {
       font-family: "Raleway", sans-serif;
@@ -493,7 +482,7 @@ canvas {
       //font-family: "Raleway", sans-serif;
       font-size: min(3.25vw, 20px);
       margin-bottom: 20px;
-      color: #bbb;      
+      color: #bbb;
     }
 
     .topic {
