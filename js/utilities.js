@@ -29,7 +29,7 @@ function init() {
 }
 
 window.smoothScroll = function (target, id) {
-  Array.from(skills_nav.getElementsByTagName("h3")).forEach((element, i) => {
+  Array.from(skills_nav.getElementsByTagName("h2")).forEach((element, i) => {
     if (element.classList.contains("active"))
       element.classList.toggle("active");
     if (i == id) element.classList.toggle("active");
