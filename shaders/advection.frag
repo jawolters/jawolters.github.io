@@ -18,8 +18,9 @@ uniform bool karman;
 
 out vec4 uNew;
 
-void main(){    
-    vec2 xNew = x - dt * texture(u, x).xy * dx;
+void main(){
+    vec2 xStar = x - dt * texture(u, x).xy * dx;
+    vec2 xNew = 0.5*(xStar + x) - dt/0.5 * texture(u, xStar).xy * dx;
     uNew.xyz = texture(u, xNew).xyz; 
 
     // BC
@@ -37,11 +38,11 @@ void main(){
         if(x.x>=0.3 && x.x<=0.7 && x.y>=0.35 && x.y<=0.65) uNew.xyz = vec3(0.0);
     }
 
+    // no backflow
+    if(cL.x <= 0.0) uNew.z = 0.0;
+
     // add dye as streamlines
     if(x.x <= dx.x){
-        if(cos((x.y - 0.5) * 90.) > 0.5) uNew.z = 1.0;            
+        if(cos((x.y - 0.5) * 90.) > 0.5) uNew.z = 1.0;
     }
-
-    // dissipate dye
-    uNew.z /= 1.0005;
 }

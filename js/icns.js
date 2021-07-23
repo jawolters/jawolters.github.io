@@ -192,7 +192,7 @@ async function runSimulation(canvas, gl) {
   }
   gl.disable(gl.BLEND);
 
-  let ux = 200.0;
+  let ux = 80.0;
   let uInit = {
     x: ux,
     y: 0.0,
@@ -278,7 +278,7 @@ async function runSimulation(canvas, gl) {
   function addForce() {
     if (pointer.moved && !pointer.down) {
       pointer.moved = false;
-      const scale = 5000.0;
+      const scale = 2000.0;
       gl.useProgram(forceProgram);
       gl.uniform1i(forceParams.u, u.old.activate(0));
       gl.uniform2fv(forceParams.pos, [pointer.x_prev, pointer.y_prev]);
