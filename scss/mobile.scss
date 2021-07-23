@@ -24,7 +24,7 @@ body {
   color: $color_text;
   background-color: #fff;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.3rem;
+  font-size: min(8vw, 1.3rem);
 }
 
 .landing_wrapper {
@@ -64,12 +64,12 @@ canvas {
     padding: 0 5vw;
 
     h1 {
-      font-size: 5vh;
+      font-size: min(140%, 5vh);
       font-family: "Megrim";
     }
 
     h2 {
-      font-size: 2.5vh;
+      font-size: min(80%, 2.5vh);
       opacity: 0;
       animation: fadeInDown 1s ease-out 0.5s forwards;
       color: #fff;
@@ -98,13 +98,13 @@ canvas {
     max-width: 100%;
     margin: 20% 0 5% 0;
 
-    picture{
+    picture {
       align-self: center;
-          
+
       .portrait {
-        height: 280px;
-        width: 280px;
-        border-radius: 100%;      
+        height: min(80vw, 280px);
+        width: min(80vw, 280px);
+        border-radius: 100%;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
           rgba(0, 0, 0, 0.22) 0px 10px 10px;
       }
@@ -113,14 +113,14 @@ canvas {
     .icons {
       display: flex;
       justify-content: center;
-      margin-left: 25%;
-      margin-right: 25%;
+      margin-left: 10%;
+      margin-right: 10%;
       margin-top: 20px;
 
       a {
         color: $color_primary;
         padding: 0.5em;
-        font-size: 18px;
+        font-size: min(5vw, 18px);
         opacity: 0;
 
         &.active {
@@ -142,7 +142,7 @@ canvas {
 
     h1 {
       font-family: "Raleway", sans-serif;
-      font-size: 2.5rem;
+      font-size: min(15vw, 2.5rem);
       margin-bottom: 1rem;
     }
   }
@@ -183,7 +183,7 @@ canvas {
 
     h1 {
       font-family: "Raleway", sans-serif;
-      font-size: 2.5rem;
+      font-size: min(15vw, 2.5rem);
     }
 
     .timeline_header_left {
@@ -206,7 +206,7 @@ canvas {
     padding: 10px 5% 10px 5%;
 
     h1 {
-      font-size: 25px;
+      font-size: min(12vw, 25px);
 
       &::before {
         width: 30px;
@@ -230,12 +230,12 @@ canvas {
     }
 
     h2 {
-      font-size: 22px;
+      font-size: min(10vw, 22px);
       color: $color-primary;
     }
 
     p {
-      font-size: 18px;
+      font-size: min(8vw, 18px);
     }
   }
 }
@@ -420,7 +420,7 @@ canvas {
 
     & > h1 {
       font-family: "Raleway", sans-serif;
-      font-size: 2.5rem;
+      font-size: min(15vw, 2.5rem);
       display: flex;
       justify-content: flex-start;
       width: 100%;
@@ -446,7 +446,7 @@ canvas {
       }
     }
 
-    .banner{
+    .banner {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -543,6 +543,7 @@ canvas {
     margin-top: 50px;
     h1 {
       font-family: "Raleway", sans-serif;
+      font-size: min(15vw, 2.5rem);
     }
   }
 
@@ -551,7 +552,7 @@ canvas {
       width: 90vw;
       border: solid $color_background;
       border-radius: 10px;
-      padding: 10px 10px 10px 100px;
+      padding: 10px 10px 10px min(10vw, 100px);
       background-color: #fff;
       margin: 25px 0;
       font-size: 18px;
@@ -566,11 +567,11 @@ canvas {
       &::before {
         font-family: "Font Awesome 5 Free";
         content: "\f15c";
-        font-size: 40px;
+        font-size: min(6vw, 40px);
         display: inline-block;
-        margin: 12px 15px;
+        margin: 12px 0px;
         position: absolute;
-        left: calc(5% + 20px);
+        left: calc(5% + min(5vw, 20px));
       }
 
       .publications_journal {
