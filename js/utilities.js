@@ -6,7 +6,7 @@ Array.from(document.getElementsByClassName("wrapper")).forEach((elem) =>
 );
 const portrait = document.getElementsByClassName("portrait")[0];
 var icons = Array.from(
-  portrait.parentElement
+  portrait.parentElement.parentElement
     .getElementsByClassName("icons")[0]
     .getElementsByTagName("a")
 );

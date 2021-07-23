@@ -75,13 +75,18 @@
 
     <div class="aboutme">
       <div class="aboutme_left">
-        <img
-          class="portrait"
-          widht="500"
-          height="500"
-          src="img/portrait.jpg"
-          alt="Jannick Wolters"
-        />
+        <picture>
+          <source srcset="img/portrait.webp" type="image/webp" />
+          <source srcset="img/portrait.png" type="image/png" />
+          <img
+            class="portrait"
+            widht="500"
+            height="500"
+            src="img/portrait.png"
+            loading="lazy"
+            alt="Jannick Wolters"
+          />
+        </picture>
         <div class="icons">
           <a href="mailto:mail@jannick-wolters.de" aria-label="E-Mail"
             ><i class="fas fa-envelope fa-2x"></i
@@ -345,27 +350,73 @@
                 <h3>Languages</h3>
                 <div class="languages">
                   <div class="col">
-                    <img src="img/cpp.svg" width="40px" height="40px" alt="C++" />
+                    <picture>
+                      <img
+                        src="img/cpp.svg"
+                        width="40px"
+                        height="40px"
+                        alt="C++"
+                        loading="lazy"
+                      />
+                    </picture>
                     <br />
                     <div class="rating expert">PRO</div>
                   </div>
                   <div class="col">
-                    <img src="img/python.png" width="40px" height="40px" alt="Python" />
+                    <picture>
+                      <source srcset="img/python.webp" type="image/webp" />
+                      <source srcset="img/python.png" type="image/png" />
+                      <img
+                        src="img/python.png"
+                        width="40px"
+                        height="40px"
+                        alt="Python"
+                        loading="lazy"
+                      />
+                    </picture>
                     <br />
                     <div class="rating expert">PRO</div>
                   </div>
                   <div class="col">
-                    <img src="img/matlab.png" width="45px" height="40px" alt="Matlab" />
+                    <picture>
+                      <source srcset="img/matlab.webp" type="image/webp" />
+                      <source srcset="img/matlab.png" type="image/png" />
+                      <img
+                        src="img/matlab.png"
+                        width="45px"
+                        height="40px"
+                        alt="Matlab"
+                        loading="lazy"
+                      />
+                    </picture>
                     <br />
                     <div class="rating expert">PRO</div>
                   </div>
                   <div class="col">
-                    <img src="img/julia.svg" width="40px" height="40px" alt="Julia" />
+                    <picture>
+                      <img
+                        src="img/julia.svg"
+                        width="40px"
+                        height="40px"
+                        alt="Julia"
+                        loading="lazy"
+                      />
+                    </picture>
                     <br />
                     <div class="rating advanced">ADV</div>
                   </div>
                   <div class="col">
-                    <img src="img/R.png" width="52px" height="40px" alt="R" />
+                    <picture>
+                      <source srcset="img/R.webp" type="image/webp" />
+                      <source srcset="img/R.png" type="image/png" />
+                      <img
+                        src="img/R.png"
+                        width="52px"
+                        height="40px"
+                        alt="R"
+                        loading="lazy"
+                      />
+                    </picture>
                     <br />
                     <div class="rating basic">BASIC</div>
                   </div>
@@ -436,14 +487,19 @@
       <div class="projects_header">
         <h1><span style="color: #71a0c8">P</span>rojects.</h1>
         <div class="card">
-          <div
-            class="wrapper"
-            style="
-              background: url(img/data.jpg);
-              background-position: center;
-              background-size: cover;
-            "
-          >
+          <div class="wrapper">
+            <picture>
+              <source srcset="img/data.webp" type="image/webp" />
+              <source srcset="img/data.jpg" type="image/jpg" />
+              <img
+                class="banner"
+                width="1000px"
+                height="750px"
+                src="img/data.jpg"
+                alt="EFRE Project ZEBRA"
+                loading="lazy"
+              />
+            </picture>
             <div class="data">
               <div class="content">
                 <h1 class="title">
@@ -484,14 +540,19 @@
         </div>
       </div>
       <div class="card">
-        <div
-          class="wrapper"
-          style="
-            background: url(img/uqcreator.png);
-            background-position: center;
-            background-size: cover;
-          "
-        >
+        <div class="wrapper">
+          <picture>
+            <source srcset="img/uqcreator.webp" type="image/webp" />
+            <source srcset="img/uqcreator.png" type="image/png" />
+            <img
+              class="banner"
+              width="1000px"
+              height="499px"
+              src="img/uqcreator.png"
+              alt="UQCreator"
+              loading="lazy"
+            />
+          </picture>
           <div class="data">
             <div class="content">
               <h1 class="title">
@@ -523,14 +584,19 @@
         </div>
       </div>
       <div class="card alt">
-        <div
-          class="wrapper"
-          style="
-            background: url(img/kitrt.png);
-            background-position: center;
-            background-size: cover;
-          "
-        >
+        <div class="wrapper">
+          <picture>
+            <source srcset="img/kitrt.webp" type="image/webp" />
+            <source srcset="img/kitrt.png" type="image/png" />
+            <img
+              class="banner"
+              width="1000px"
+              height="800px"
+              src="img/kitrt.png"
+              alt="KiT-RT"
+              loading="lazy"
+            />
+          </picture>
           <div class="data">
             <div class="content">
               <h1 class="title">
@@ -559,14 +625,19 @@
         </div>
       </div>
       <div class="card">
-        <div
-          class="wrapper"
-          style="
-            background: url(img/offshore.jpg);
-            background-position: center;
-            background-size: cover;
-          "
-        >
+        <div class="wrapper">
+          <picture>
+            <source srcset="img/offshore.webp" type="image/webp" />
+            <source srcset="img/offshore.jpg" type="image/jpeg" />
+            <img
+              class="banner"
+              width="1000px"
+              height="648px"
+              src="img/offshore.jpeg"
+              alt="Renewable Energy"
+              loading="lazy"
+            />
+          </picture>
           <div class="data">
             <div class="content">
               <h1 class="title">
@@ -671,7 +742,11 @@
         <a href="downloads/CV_Jannick_Wolters.pdf" aria-label="Download CV"
           ><i class="far fa-file-pdf"></i
         ></a>
-        <p><a href="downloads/CV_Jannick_Wolters.pdf" aria-label="Download CV">Download CV</a></p>
+        <p>
+          <a href="downloads/CV_Jannick_Wolters.pdf" aria-label="Download CV"
+            >Download CV</a
+          >
+        </p>
       </div>
       <div class="enjoy" style="text-align: right">
         <h1><span style="color: #71a0c8">H</span>ave a nice day!</h1>

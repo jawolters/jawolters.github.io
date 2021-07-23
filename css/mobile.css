@@ -82,11 +82,13 @@ canvas {
   max-width: 100%;
   margin: 20% 0 5% 0;
 }
-.aboutme .aboutme_left .portrait {
+.aboutme .aboutme_left picture {
+  align-self: center;
+}
+.aboutme .aboutme_left picture .portrait {
   height: 280px;
   width: 280px;
   border-radius: 100%;
-  align-self: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .aboutme .aboutme_left .icons {
@@ -373,6 +375,13 @@ canvas {
 }
 .projects .card .wrapper:hover .data {
   transform: translateY(0);
+}
+.projects .card .banner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  height: 600px;
 }
 .projects .card .data {
   position: absolute;
