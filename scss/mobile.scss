@@ -41,6 +41,10 @@ canvas {
   position: absolute;
 }
 
+.fancy::first-letter{
+  color: #71a0c8;
+}
+
 .landing {
   height: 100vh;
   width: 100vw;
@@ -66,6 +70,13 @@ canvas {
     h1 {
       font-size: min(140%, 5vh);
       font-family: "Megrim";
+    }
+
+    .sub{
+      display: flex;
+      flex-direction: row;
+      content: " ";
+      white-space: pre;
     }
 
     h2 {
@@ -421,8 +432,6 @@ canvas {
     & > h1 {
       font-family: "Raleway", sans-serif;
       font-size: min(15vw, 2.5rem);
-      display: flex;
-      justify-content: flex-start;
       width: 100%;
       padding-left: 2.5%;
     }

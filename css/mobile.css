@@ -31,6 +31,10 @@ canvas {
   position: absolute;
 }
 
+.fancy::first-letter {
+  color: #71a0c8;
+}
+
 .landing {
   height: 100vh;
   width: 100vw;
@@ -54,6 +58,12 @@ canvas {
 .landing .landing_content h1 {
   font-size: min(140%, 5vh);
   font-family: "Megrim";
+}
+.landing .landing_content .sub {
+  display: flex;
+  flex-direction: row;
+  content: " ";
+  white-space: pre;
 }
 .landing .landing_content h2 {
   font-size: min(80%, 2.5vh);
@@ -357,8 +367,6 @@ canvas {
 .projects .projects_header > h1 {
   font-family: "Raleway", sans-serif;
   font-size: min(15vw, 2.5rem);
-  display: flex;
-  justify-content: flex-start;
   width: 100%;
   padding-left: 2.5%;
 }
