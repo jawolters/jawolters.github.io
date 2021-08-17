@@ -336,7 +336,7 @@ canvas {
 }
 .skills .skills_panel .skills_content .skills_content_page_wrapper .skills_content_page .section .languages {
   display: flex;
-  max-width: 80%;
+  max-width: 100%;
   justify-content: space-around;
   align-items: flex-end;
   margin-left: 10%;
