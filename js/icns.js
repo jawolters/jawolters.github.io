@@ -5,6 +5,7 @@ function sleep(ms) {
 }
 
 async function runSimulation(canvas, gl) {
+  await sleep(1000);
   resizeCanvas();
 
   let width = canvas.clientWidth;
@@ -203,9 +204,7 @@ async function runSimulation(canvas, gl) {
 
   let tOld = Date.now();
   let t;
-  let dt;
-
-  await sleep(1000);
+  let dt;  
 
   simulate();
 

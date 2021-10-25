@@ -25,7 +25,12 @@ window.addEventListener("load", init);
 function init() {
   recache();
   document.addEventListener("scroll", throttle(scrollCheck, 10));
-  window.addEventListener("resize", debounce(recache, 50));
+  //window.addEventListener("resize", debounce(recache, 50));
+
+  window.addEventListener('resize', function () { 
+    "use strict";
+    window.location.reload(); 
+});
 }
 
 window.smoothScroll = function (target, id) {

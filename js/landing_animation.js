@@ -5,6 +5,7 @@ function sleep(ms) {
 }
 
 async function runSimulation(canvas, gl) {
+  await sleep(1500);
   resizeCanvas();
 
   let width = canvas.clientWidth;
@@ -218,9 +219,7 @@ async function runSimulation(canvas, gl) {
   let dt;
 
   var fps_hist = [];
-  const average = (arr) => arr.reduce((p, c) => p + c, 0) / arr.length;
-
-  await sleep(1500);
+  const average = (arr) => arr.reduce((p, c) => p + c, 0) / arr.length;  
 
   simulate();
 
