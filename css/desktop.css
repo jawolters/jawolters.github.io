@@ -57,7 +57,7 @@ canvas {
   padding: 0 5vw;
 }
 .landing .landing_content h1 {
-  font-size: 3.75vw;
+  font-size: 3.6vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 0.25s forwards;
   font-family: "Megrim";
@@ -504,7 +504,7 @@ canvas {
 }
 .publications .publications_content .publication::before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "\f15c";
   font-size: 40px;
   display: inline-block;
   margin: 12px 15px;
