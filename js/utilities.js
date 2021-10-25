@@ -29,7 +29,7 @@ function init() {
 
   window.addEventListener('resize', function () { 
     "use strict";
-    window.location.reload(); 
+    window.location = window.location
 });
 }
 
