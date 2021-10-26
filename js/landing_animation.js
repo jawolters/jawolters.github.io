@@ -554,7 +554,7 @@ const params = {
 let gl = canvas.getContext("webgl2", params);
 
 if (gl) {
-  if (window.matchMedia("screen and (min-width: 700px)").matches) {
+  if (window.matchMedia("screen and (min-width: 1000px)").matches) {
     runSimulation(canvas, gl);
   } else {
     runAnimation(canvas, gl);
