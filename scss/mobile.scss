@@ -564,7 +564,7 @@ canvas {
       width: 90vw;
       border: solid $color_background;
       border-radius: 10px;
-      padding: 10px 10px 10px min(10vw, 100px);
+      padding: 10px 10px 10px max(10vw, 60px);
       background-color: #fff;
       margin: 25px 0;
       font-size: min(10vw,18px);
@@ -579,11 +579,11 @@ canvas {
       &::before {
         font-family: "Font Awesome 5 Free";
         content: "\f15c";
-        font-size: min(6vw, 40px);
+        font-size: max(5vw, 30px);
         display: inline-block;
-        margin: 12px 0px;
+        margin: 10px 0 0 5px;
         position: absolute;
-        left: calc(5% + min(5vw, 20px));
+        left: calc(5% + min(5vw, 20px));        
       }
 
       .publications_journal {
