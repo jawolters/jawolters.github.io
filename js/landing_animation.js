@@ -228,7 +228,7 @@ async function runSimulation(canvas, gl) {
     if (fps_hist.length >= 15) {
       fps_hist.shift();
       const fps_avg = average(fps_hist);
-      if (fps_avg < 30) {
+      if (fps_avg < 20) {
         downscaleFramebuffer();
         fps_hist = [];
       }
