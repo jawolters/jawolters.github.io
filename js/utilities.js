@@ -29,7 +29,9 @@ function init() {
 
   window.addEventListener('resize', function () { 
     "use strict";
-    window.location = window.location
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      window.location = window.location
+    }
 });
 }
 
