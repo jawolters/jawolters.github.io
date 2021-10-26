@@ -417,7 +417,8 @@ canvas {
 .projects .card .title {
   margin-top: -10px;
   font-family: "Raleway", sans-serif;
-  font-size: 30px;
+  font-size: min(7vw, 30px);
+  height: 35px;
 }
 .projects .card .title a {
   color: white;
