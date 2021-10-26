@@ -408,6 +408,8 @@ async function runSimulation(canvas, gl) {
 }
 
 async function runAnimation(canvas, gl) {
+  await sleep(500);
+
   resizeCanvas();
 
   let width = canvas.clientWidth;
