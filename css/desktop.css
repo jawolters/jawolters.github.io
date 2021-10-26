@@ -68,6 +68,9 @@ canvas {
   content: " ";
   white-space: pre;
 }
+.landing .landing_content .sub .fancy::first-letter {
+  margin-left: 0.25em;
+}
 .landing .landing_content h2 {
   font-size: 1.5vw;
   opacity: 0;

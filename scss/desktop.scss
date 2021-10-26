@@ -80,6 +80,10 @@ canvas {
       flex-direction: row;
       content: " ";
       white-space: pre;
+
+      .fancy::first-letter{
+        margin-left: 0.25em;
+      }
     }
 
     h2 {

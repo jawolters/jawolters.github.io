@@ -37,7 +37,7 @@ canvas {
 }
 
 .landing {
-  height: 100vh;
+  height: calc(100vh - (100vh - 100%));
   width: 100vw;
   max-width: 100%;
   color: white;
@@ -46,7 +46,7 @@ canvas {
   position: absolute;
 }
 .landing .landing_content {
-  width: calc(100vw+4px);
+  width: 40vw;
   height: 30vh;
   left: -2px;
   align-self: center;
@@ -54,10 +54,10 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5vw;
+  padding: 0 4vw;
 }
 .landing .landing_content h1 {
-  font-size: 4.8vw;
+  font-size: 4vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 0.25s forwards;
   font-family: "Megrim";
@@ -68,8 +68,11 @@ canvas {
   content: " ";
   white-space: pre;
 }
+.landing .landing_content .sub .fancy::first-letter {
+  margin-left: 0.25em;
+}
 .landing .landing_content h2 {
-  font-size: 2.4vw;
+  font-size: 2vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 1.5s forwards;
   color: #fff;
@@ -503,7 +506,7 @@ canvas {
 }
 .publications .publications_content .publication::before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "\f15c";
   font-size: 40px;
   display: inline-block;
   margin: 10px 15px;
