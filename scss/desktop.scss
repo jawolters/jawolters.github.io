@@ -42,7 +42,7 @@ canvas {
   z-index: 1;
 }
 
-.fancy::first-letter{
+.fancy::first-letter {
   color: #71a0c8;
 }
 
@@ -73,13 +73,13 @@ canvas {
       font-family: "Megrim";
     }
 
-    .sub{
+    .sub {
       display: flex;
       flex-direction: row;
       content: " ";
       white-space: pre;
 
-      .fancy::first-letter{
+      .fancy::first-letter {
         margin-left: 0.25em;
       }
     }
@@ -115,7 +115,7 @@ canvas {
     width: 50vw;
     margin: 5% 5% 5% 20%;
 
-    picture{
+    picture {
       align-self: center;
 
       .portrait {
@@ -477,7 +477,7 @@ canvas {
       margin-left: 33%;
     }
 
-    .banner{
+    .banner {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);

@@ -27,12 +27,22 @@ function init() {
   document.addEventListener("scroll", throttle(scrollCheck, 10));
   //window.addEventListener("resize", debounce(recache, 50));
 
-  window.addEventListener('resize', function () { 
+  window.addEventListener("resize", function () {
     "use strict";
-    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-      window.location = window.location
+    let isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    if (!isMobile) {
+      window.location = window.location;
     }
-});
+  });
+
+  window.addEventListener("orientationchange", function () {
+    "use strict";
+    window.location = window.location;
+  }, false);
+
 }
 
 window.smoothScroll = function (target, id) {

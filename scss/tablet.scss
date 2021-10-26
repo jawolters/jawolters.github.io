@@ -42,7 +42,7 @@ canvas {
   z-index: 1;
 }
 
-.fancy::first-letter{
+.fancy::first-letter {
   color: #71a0c8;
 }
 
@@ -56,30 +56,30 @@ canvas {
   position: absolute;
 
   .landing_content {
-    width: 40vw;
+    width: 60vw;
+    max-width: 1000px;
     height: 30vh;
-    left: -2px;
     align-self: center;
     align-items: flex-end;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 4vw;
+    padding: 0 10vw;
 
     h1 {
-      font-size: 4vw;
+      font-size: 4.6vw;
       opacity: 0;
       animation: fadeInDown 1s ease-out 0.25s forwards;
       font-family: "Megrim";
     }
-    
-    .sub{
+
+    .sub {
       display: flex;
       flex-direction: row;
       content: " ";
       white-space: pre;
 
-      .fancy::first-letter{
+      .fancy::first-letter {
         margin-left: 0.25em;
       }
     }
@@ -94,17 +94,7 @@ canvas {
   }
 
   .landing_arrow {
-    position: absolute;
-    top: 90vh;
-    fill: #fff;
-    opacity: 0;
-    animation: fadeInDown05 5s ease-out 5s forwards;
-    svg {
-      height: 3vh;
-    }
-    &.vanish {
-      animation: fadeOutDown05 1s ease-out 0s forwards;
-    }
+    display: none;
   }
 }
 
@@ -119,9 +109,9 @@ canvas {
     width: 50vw;
     margin: 5% 5% 5% 5%;
 
-    picture{
+    picture {
       align-self: center;
-      
+
       .portrait {
         height: 20vh;
         width: 20vh;
@@ -447,14 +437,14 @@ canvas {
   .projects_header {
     display: flex;
     flex-direction: row;
-        
+
     & > h1 {
       font-family: "Raleway", sans-serif;
       font-size: 32px;
       text-align: center;
       justify-content: center;
       margin-top: 250px;
-      width: 33%;      
+      width: 33%;
     }
   }
 
@@ -480,7 +470,7 @@ canvas {
       margin-left: 33%;
     }
 
-    .banner{
+    .banner {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);

@@ -41,7 +41,7 @@ canvas {
   position: absolute;
 }
 
-.fancy::first-letter{
+.fancy::first-letter {
   color: #71a0c8;
 }
 
@@ -70,13 +70,13 @@ canvas {
       font-family: "Megrim";
     }
 
-    .sub{
+    .sub {
       display: flex;
       flex-direction: row;
       content: " ";
       white-space: pre;
 
-      .fancy::first-letter{
+      .fancy::first-letter {
         margin-left: 0.25em;
       }
     }
@@ -567,7 +567,7 @@ canvas {
       padding: 10px 10px 10px max(10vw, 60px);
       background-color: #fff;
       margin: 25px 0;
-      font-size: min(10vw,18px);
+      font-size: min(10vw, 18px);
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
@@ -583,7 +583,7 @@ canvas {
         display: inline-block;
         margin: 10px 0 0 5px;
         position: absolute;
-        left: calc(5% + min(5vw, 20px));        
+        left: calc(5% + min(5vw, 20px));
       }
 
       .publications_journal {

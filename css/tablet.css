@@ -46,18 +46,18 @@ canvas {
   position: absolute;
 }
 .landing .landing_content {
-  width: 40vw;
+  width: 60vw;
+  max-width: 1000px;
   height: 30vh;
-  left: -2px;
   align-self: center;
   align-items: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 4vw;
+  padding: 0 10vw;
 }
 .landing .landing_content h1 {
-  font-size: 4vw;
+  font-size: 4.6vw;
   opacity: 0;
   animation: fadeInDown 1s ease-out 0.25s forwards;
   font-family: "Megrim";
@@ -79,17 +79,7 @@ canvas {
   font-family: "Raleway", sans-serif;
 }
 .landing .landing_arrow {
-  position: absolute;
-  top: 90vh;
-  fill: #fff;
-  opacity: 0;
-  animation: fadeInDown05 5s ease-out 5s forwards;
-}
-.landing .landing_arrow svg {
-  height: 3vh;
-}
-.landing .landing_arrow.vanish {
-  animation: fadeOutDown05 1s ease-out 0s forwards;
+  display: none;
 }
 
 .aboutme {
