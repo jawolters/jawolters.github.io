@@ -98,15 +98,6 @@ function scrollCheck() {
   const offset = getScrollOffset();
   const midline = cache.viewport.height * 0.5;
 
-  if (offset.y > 200) {
-    arrow = document.getElementsByClassName("landing_arrow")[0];
-    if (!arrow.classList.contains("vanish")) {
-      if (Math.floor((Date.now() - start) / 1000) < 8)
-        arrow.style.display = "none";
-      else arrow.classList.toggle("vanish");
-    }
-  }
-
   icons.forEach((icon) =>
     icon.classList.toggle(
       "active",
